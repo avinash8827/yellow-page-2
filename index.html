@@ -1,312 +1,382 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="css/index.css">
-        <title>Chicago</title>
-        <style>
-            body {
-                margin: 0;
-                padding: 0;
-                cursor: default;
-                color: #222;
-                font-size: 100%;
-                font-style: normal;
-                font-weight: 400;
-                line-height: 1 !important;
-                min-width: 320px;
-            }
-            .header{
-                width:100%;
-                height:72px;
-            }
-            .tbdr{
-                border:1px solid black;
-                background-color: pink;
-            }
-            .logo{
-                width:50px !important;
-                height:50px !important;
-            }
-            .browse{
-                font-size: 18px;
-                padding:9px 3px 8px 4px;
-                text-decoration: none;
-                color: black;
-            }
-           
-            .slider{
-                height:151px;
-                background-image: url("img/chicago-il.jpg");
-                background-size: cover;
-                background-position: bottom;
-                background-repeat: no-repeat;
-            }
-            .Chicago{
-                padding-top:95px;
-                color: #fff;
-            }
-            .input_form{
-                width:750px;
-            }
-            .input_box{
-                width:50%;
-                position: relative;
-            }
-            .input_box input{
-                border: none;
-                width:220px;
-                height:30px;
-            }
-            .border_after{
-                display:none;
-                position:absolute;
-                z-index: 222;
-                content:"";
-                background: #ffd400;
-                height:4px;
-                width: 100%;
-                top: 91%;
-                left:0;
-            }
-            .input_box input:focus ~ .border_after{
-                display: block;
-            }
-            .input_box input:focus, .btn{
-                box-shadow: none !important;
-                border: none !important;
-                outline: none !important;
-            }
-            .input_box:nth-child(2){
-                border-left: 1px solid rgba(0, 0, 0, 0.4);
-            }
-            .r-login{
-                text-align: center!important;
-            }
-           
-            .width{
-            
-                width:145px;
-                height:145px;
-                padding:0px 24px 0px 0px;
-            }
-            .width a{
-                text-decoration: none;
-                color:#000;
-            }
-            .img{
-                width:65%;
-                height:65%;
-                padding:0px !important;
-                border:1px solid #7bbbca;
-                border-radius: 65px;
-            }            
-            .restaurants{
-                width:100%;
-                height:100%; 
-                padding:25px;
-                line-height: auto;
-                align-items: center;
-                background-size: cover;
 
-            }
-            
-            .second-container div {
-                margin-top:20px;
-                
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/index.css">
+    <title>Chicago</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            cursor: default;
+            color: #222;
+            font-size: 100%;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1 !important;
+            min-width: 320px;
+        }
 
-            }
-            .first-div{
-                width:100% !important;
-                height:90% !important;
-            }
-            
-            .Popular{
-                width:200px !important;
-                height:50px !important;
-                display:inline-block;
-                margin-left: 40px !important;
-                
-            }
-            .star{
-                position: absolute;
-            }
-            .star > i {
-                position:relative;
-                top: 0 !important;
-                left: 0 !important;
-                margin-top: -50px!important;
-                font-weight:0px !important;
-            }
-            .address{
-                width:100% !important;
-                height: 54px !important;
-                background-color: rgba(255,255,255,.2);
-            }
-            .address > a{
-                text-decoration: none;
-                color:#fff;
-            }
-            .address3 > a{
-                text-decoration: none;
-                color:#fff;
-            }
-            .address a:hover{
-                text-decoration: underline;
-            }
-            .first-perent{
-                background-image: -webkit-linear-gradient(left,#de3961,#e6555c)!important;
-                width:330px;
-            }
-            .second-perent{
-                background-image: -webkit-linear-gradient(left,#458daf,#4c9db0)!important;
-                width:330px;
-            }
-            .therd-perent{
-                background-image: -webkit-linear-gradient(left,#389952,#50b34f)!important;
-                width:330px;
-            }
-            .button{
-                width:80% !important;
-                height:36px !important;
-                margin-left: 30px !important;
-                margin-bottom: 30px;
-                border:2px solid #fff;
-                line-height: 30px;
-                background-color: #b22e4e;
-                
-            }
-            .button > a{
-                text-decoration: none;
-                color:#fff;
-            }
-            .button > a:hover{
-                text-decoration:underline;
-            }
-            
-            .button-2{
-                background-color: #3A798B !important;
-            }
-            .button-3{
-                background-color: #2c7942 !important;
-            }
-            #popular-businesses {
-                background-image: radial-gradient(circle at 84% 16%,#e85c5b,#db2e63);
-            }
-            #trends {
-                background-image: radial-gradient(circle at 84% 16%,#54b2b0,#3f80ae);
-            }
-            #trends li a {
-                font-weight: 700;
-                letter-spacing: 0;
-                padding: 10px 12px;
-                background-color: rgba(255,255,255,.2);
-                overflow: hidden;
-            }
-            #nearby svg, #popular-businesses svg, #trends svg {
-                margin-right: 14px;
-                fill: #fff;
-            }
-            svg:not(:root) {
-                overflow: hidden;
-            }
-            #yp-header .search-bar form button:focus, #yp-header .search-bar form>div input:focus, #yp-header a:focus, .select-wrapper input[type=text]:focus, .select-wrapper input[type=date]:focus, .select-wrapper select:focus, a:active, a:focus, a:hover {
-                outline: 0 !important;
-            }
-            .address3 {
-                width: 144px !important;
-                height: 36px !important;
-                background-color: rgba(255,255,255,.2);
-                margin-left: -29px !important;
-            }
-            .sec_1{
-                margin-top: -22px !important;
-            }
-            .sec_h{
-                height: 370px !important;
-            }
-            section#categories .category:nth-child(3n+1) {
-                margin-left: 0;
-            }
-            section#categories .category {
-                margin: 11px 12px;
-                padding: 18px 16px 17px 17px;
-                width: calc(33% - 13.5px);
-                border-radius: 4px;
-                border: 2px solid #eee;
-            }
-            #coupons h2::before {
-                content: '';
-                padding: 10px 56px 10px 0;
-                width: 24px;
-                height: 24px;
-                line-height: 34px;
-                background: url(/img/icon-coupons.svg) center center no-repeat;
-                margin-top: 10px;
-            }
-            .coupons ul>li .coupon {
-                position: relative;
-                background-color: #fff;
-                width: inherit;
-                height: inherit;
-            }
-            #coupons {
-                zoom: 1;
-                margin-bottom: 0;
-                overflow: hidden;
-            }
-            #coupons a {
-                color: #4f9300;
-            }
-            .coupons ul>li .coupon .coupon-link {
-                color: #4f9300;
-                display: inline-block;
-                width: inherit;
-                height: inherit;
-            }
-            .coupons ul>li .coupon .coupon-img {
-                background-color: #f7f6f2;
-                min-width: 210px;
-                min-height: 140px;
-            }
+        .header {
+            width: 100%;
+            height: 72px;
+        }
 
-             embed, img, object {
-                max-width: 100%;
-                height: auto;
-            }
-            .coupons ul>li .coupon .coupon-link>div {
-                padding: 0 12px;
-            }
-            .coupons ul>li .coupon .coupon-listing-name {
-                color: #067ab4;
-            }
-            section#categories .category {
+        .tbdr {
+            border: 1px solid black;
+            background-color: pink;
+        }
+
+        .logo {
+            width: 50px !important;
+            height: 50px !important;
+        }
+
+        .browse {
+            font-size: 18px;
+            padding: 9px 3px 8px 4px;
+            text-decoration: none;
+            color: black;
+        }
+
+        .slider {
+            height: 151px;
+            background-image: url("img/chicago-il.jpg");
+            background-size: cover;
+            background-position: bottom;
+            background-repeat: no-repeat;
+        }
+
+        .Chicago {
+            padding-top: 95px;
+            color: #fff;
+        }
+
+        .input_form {
+            width: 750px;
+        }
+
+        .input_box {
+            width: 50%;
+            position: relative;
+        }
+
+        .input_box input {
+            border: none;
+            width: 220px;
+            height: 30px;
+        }
+
+        .border_after {
+            display: none;
+            position: absolute;
+            z-index: 222;
+            content: "";
+            background: #ffd400;
+            height: 4px;
+            width: 100%;
+            top: 91%;
+            left: 0;
+        }
+
+        .input_box input:focus~.border_after {
+            display: block;
+        }
+
+        .input_box input:focus,
+        .btn {
+            box-shadow: none !important;
+            border: none !important;
+            outline: none !important;
+        }
+
+        .input_box:nth-child(2) {
+            border-left: 1px solid rgba(0, 0, 0, 0.4);
+        }
+
+        .r-login {
+            text-align: center !important;
+        }
+
+        .width {
+
+            width: 145px;
+            height: 145px;
+            padding: 0px 24px 0px 0px;
+        }
+
+        .width a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .img {
+            width: 65%;
+            height: 65%;
+            padding: 0px !important;
+            border: 1px solid #7bbbca;
+            border-radius: 65px;
+        }
+
+        .restaurants {
+            width: 100%;
+            height: 100%;
+            padding: 25px;
+            line-height: auto;
+            align-items: center;
+            background-size: cover;
+
+        }
+
+        .second-container div {
+            margin-top: 20px;
+
+
+        }
+
+        .first-div {
+            width: 100% !important;
+            height: 90% !important;
+        }
+
+        .Popular {
+            width: 200px !important;
+            height: 50px !important;
+            display: inline-block;
+            margin-left: 40px !important;
+
+        }
+
+        .star {
+            position: absolute;
+        }
+
+        .star>i {
+            position: relative;
+            top: 0 !important;
+            left: 0 !important;
+            margin-top: -50px !important;
+            font-weight: 0px !important;
+        }
+
+        .address {
+            width: 100% !important;
+            height: 54px !important;
+            background-color: rgba(255, 255, 255, .2);
+        }
+
+        .address>a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .address3>a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .address a:hover {
+            text-decoration: underline;
+        }
+
+        .first-perent {
+            background-image: -webkit-linear-gradient(left, #de3961, #e6555c) !important;
+            width: 330px;
+        }
+
+        .second-perent {
+            background-image: -webkit-linear-gradient(left, #458daf, #4c9db0) !important;
+            width: 330px;
+        }
+
+        .therd-perent {
+            background-image: -webkit-linear-gradient(left, #389952, #50b34f) !important;
+            width: 330px;
+        }
+
+        .button {
+            width: 80% !important;
+            height: 36px !important;
+            margin-left: 30px !important;
+            margin-bottom: 30px;
+            border: 2px solid #fff;
+            line-height: 30px;
+            background-color: #b22e4e;
+
+        }
+
+        .button>a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .button>a:hover {
+            text-decoration: underline;
+        }
+
+        .button-2 {
+            background-color: #3A798B !important;
+        }
+
+        .button-3 {
+            background-color: #2c7942 !important;
+        }
+
+        #popular-businesses {
+            background-image: radial-gradient(circle at 84% 16%, #e85c5b, #db2e63);
+        }
+
+        #trends {
+            background-image: radial-gradient(circle at 84% 16%, #54b2b0, #3f80ae);
+        }
+
+        #trends li a {
+            font-weight: 700;
+            letter-spacing: 0;
+            padding: 10px 12px;
+            background-color: rgba(255, 255, 255, .2);
+            overflow: hidden;
+        }
+
+        #nearby svg,
+        #popular-businesses svg,
+        #trends svg {
+            margin-right: 14px;
+            fill: #fff;
+        }
+
+        svg:not(:root) {
+            overflow: hidden;
+        }
+
+        #yp-header .search-bar form button:focus,
+        #yp-header .search-bar form>div input:focus,
+        #yp-header a:focus,
+        .select-wrapper input[type=text]:focus,
+        .select-wrapper input[type=date]:focus,
+        .select-wrapper select:focus,
+        a:active,
+        a:focus,
+        a:hover {
+            outline: 0 !important;
+        }
+
+        .address3 {
+            width: 144px !important;
+            height: 36px !important;
+            background-color: rgba(255, 255, 255, .2);
+            margin-left: -29px !important;
+        }
+
+        .sec_1 {
+            margin-top: -22px !important;
+        }
+
+        .sec_h {
+            height: 370px !important;
+        }
+
+        section#categories .category:nth-child(3n+1) {
+            margin-left: 0;
+        }
+
+        section#categories .category {
             margin: 11px 12px;
             padding: 18px 16px 17px 17px;
             width: calc(33% - 13.5px);
             border-radius: 4px;
             border: 2px solid #eee;
         }
+
+        #coupons h2::before {
+            content: '';
+            padding: 10px 56px 10px 0;
+            width: 24px;
+            height: 24px;
+            line-height: 34px;
+            background: url(/img/icon-coupons.svg) center center no-repeat;
+            margin-top: 10px;
+        }
+
+        .coupons ul>li .coupon {
+            position: relative;
+            background-color: #fff;
+            width: inherit;
+            height: inherit;
+        }
+
+        #coupons {
+            zoom: 1;
+            margin-bottom: 0;
+            overflow: hidden;
+        }
+
+        #coupons a {
+            color: #4f9300;
+        }
+
+        .coupons ul>li .coupon .coupon-link {
+            color: #4f9300;
+            display: inline-block;
+            width: inherit;
+            height: inherit;
+        }
+
+        .coupons ul>li .coupon .coupon-img {
+            background-color: #f7f6f2;
+            min-width: 210px;
+            min-height: 140px;
+        }
+
+        embed,
+        img,
+        object {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .coupons ul>li .coupon .coupon-link>div {
+            padding: 0 12px;
+        }
+
+        .coupons ul>li .coupon .coupon-listing-name {
+            color: #067ab4;
+        }
+
+        section#categories .category {
+            margin: 11px 12px;
+            padding: 18px 16px 17px 17px;
+            width: calc(33% - 13.5px);
+            border-radius: 4px;
+            border: 2px solid #eee;
+        }
+
         section#categories .category ul.listings li {
             width: 100%;
             border-bottom: solid 1px #EED;
             padding-top: 7px;
             padding-bottom: 10px;
         }
+
         section#categories .category ul.listings li span {
             display: block;
         }
-        
+
         .coupons ul>li .coupon .favorites-actions {
             display: none;
             z-index: 3;
         }
-        .coupons ul>li .coupon   .favorites-actions .added-message {
-            border: 0!important;
+
+        .coupons ul>li .coupon .favorites-actions .added-message {
+            border: 0 !important;
             text-align: center;
             right: 0;
             left: 2px;
@@ -315,10 +385,13 @@
             top: 195px;
             background-color: #fff;
         }
-        .citypages #coupons, .citypages{
+
+        .citypages #coupons,
+        .citypages {
             border: 2px solid #eee !important;
             border-radius: 4px !important;
         }
+
         .popular-cats {
             display: -webkit-box;
             display: -moz-box;
@@ -328,6 +401,7 @@
             width: 100%;
             margin-top: 16px;
         }
+
         .popular-cats h3 {
             font-size: 14px;
             font-size: .875rem;
@@ -336,6 +410,7 @@
             padding-bottom: 15px;
             cursor: pointer;
         }
+
         .popular-cats a {
             font-size: 14px;
             font-size: .875rem;
@@ -344,13 +419,16 @@
             display: block;
             color: #067ab4;
         }
+
         .row {
             margin-bottom: 20px;
         }
+
         #thryv-scan-promo {
             border: 12px solid #eee;
             border-radius: 4px;
         }
+
         #thryv-scan-promo .offer-note {
             font-size: 10px;
             font-size: .625rem;
@@ -360,6 +438,7 @@
             letter-spacing: .2em;
             color: #a1a2a3;
         }
+
         #thryv-scan-promo .btn {
             font-size: 15px;
             font-size: .9375rem;
@@ -377,21 +456,26 @@
             font-weight: 700;
             background-color: #3cadc9;
         }
-        body, html {
+
+        body,
+        html {
             letter-spacing: .2px;
             font-size: 16px;
             background: #fff;
         }
-        .a_foot{
+
+        .a_foot {
             padding-top: 50px;
             padding-bottom: 25px;
             border-top: 1px solid #ccc;
         }
-        .a_footer_head{
+
+        .a_footer_head {
             font-weight: 700;
             letter-spacing: 0;
         }
-        .foot_a{
+
+        .foot_a {
             line-height: 1.25rem;
             display: block;
             color: inherit;
@@ -399,1228 +483,1287 @@
             padding-left: 0;
             max-height: none;
         }
+
         .main_a_a {
             color: #555 !important;
             font-size: 0.9em;
             text-decoration: none;
-            font-family: helvetica,arial,sans-serif;
+            font-family: helvetica, arial, sans-serif;
         }
+
         /* footer CSS */
 
-.k_footer{
-    width: 100%;
-    height: 665px;
-    border-top: 1px solid #f4f4f4;
-    margin:0px;
-}
-.k_footertop{
-    height:257px;
-}
-.k_bg1{
-    background-color: #f5f5f5;
-    border-bottom: 1px solid #cccccc;
-}
-.k_claim_img{
-  margin-left:280px;
-  margin-bottom: 145px !important;
-}
-.k_inlineblock{
-    display:inline-block !important;
-}  
-.k_margin{
-    margin:50px 20px;
-} 
-.k_claim_fs{
-    font-size:1.6em !important;
-}
-.k_text{
-    color:#555 !important;
-    font-size:0.8em;
-}
-.k_claim_no{
-    font-weight: 700;
-    color:#067ab4;
-}
-.k_footerbottom{
-    min-height:409px;
-}
-.k_a{
-    color:#555 !important;
-    font-size: 0.9em;
-    text-decoration: none;
-    margin-top:35px;
-    font-family: helvetica,arial,sans-serif;
-}
-.k_mleft{
-    margin-right: 25px;
-}
-.k_bg2{
-    background-color: #f7f7f7;
-}
-.k_box1{
-    width:20.5%;
-    letter-spacing: .2px;
-}
-.k_box3{
-    min-width:320px;
-}
-.k_box4{
-    width:14%;
-    margin-left: 20px;
-}
-.k_contact{
-    color:#292e32;
-}
-.k_fb{
-    color:#187af0;
-}
-.k_tw{
-    color:#189eec;
-    width:50px;
-}
-.k_privacy{
-    font-size:1em;
-    text-decoration: none !important;
-    padding:5px 5px;
-}
-.k_bottom{
-    
-}
-.tbdr{
-    border:1px dashed #000;
-}
+        .k_footer {
+            width: 100%;
+            height: 665px;
+            border-top: 1px solid #f4f4f4;
+            margin: 0px;
+        }
 
-     </style>        
-    </head>
-    <body>
-        <header class="container p-0">
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <div class="container p-0">
-                    <div >
-                        <img class="image-size d-none d-xl-block" src="img/yp.svg" alt="image not available" >
-                    </div>
-                    <div class="ms-0">
-                        <img class="logo d-xl-none float-start " src="img/mobile_yp_logo.svg" alt="image not available" >
-                    </div>
-                    <div class=" ms-2 d-none d-xl-block">
-                        <a href="#" class="browse">Browse <i class="fa-solid fa-caret-down pt-1 pe-1 pd-1 ps-0"></i> </a>
-                    </div> 
-                     <form class="ms-3 input_form ">
-                        <div class=" border d-flex  form-control p-0" id="query-container">
-                                <div class="input_box  ps-3 pt-2 pb-2">
-                                    <label for="">
-                                        <i class="fa-solid fa-magnifying-glass"></i>
-                                    </label>
-                                    <input class="form-control d-inline r-input pe-0 ps-0" type="text"  placeholder="What are you looking for?">
-                                    <div class="border_after"></div>
-                                </div> 
-                                
-                                <div class="input_box ps-3 pt-2 pb-2 ">
-                                    <label for="">
-                                        <i class="fa-solid fa-location-dot"></i>
-                                    </label>
-                                    <input class="form-control d-inline ps-0" type="text"  placeholder="Where?">
-                                    <div class="border_after"></div>
-                                </div>  
-                                <div class="search_btn">
-                                    <button class="btn btn-warning p-2 text-dark fs-5  px-4 rounded-0">Find</button>
-                                </div>
-                        </div>
-                    </form> 
-                  <button class="navbar-toggler border-0 " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="collapse navbar-collapse ms-3 r-login " id="navbarSupportedContent">
-                    <ul class="navbar-nav  ">
-                      <li class="nav-item">
-                        <a class="text-dark fw-bold p-0" aria-current="page" href="./singup.html">Login</a>
-                      </li> 
+        .k_footertop {
+            height: 257px;
+        }
 
-                      <li class="nav-item">
-                        <a class="nav-link text-dark fw-bold p-0" href="#">Sign Up</a>
-                      </li>
-                    
-                    </ul>
-                   
-                  </div>
+        .k_bg1 {
+            background-color: #f5f5f5;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .k_claim_img {
+            margin-left: 280px;
+            margin-bottom: 145px !important;
+        }
+
+        .k_inlineblock {
+            display: inline-block !important;
+        }
+
+        .k_margin {
+            margin: 50px 20px;
+        }
+
+        .k_claim_fs {
+            font-size: 1.6em !important;
+        }
+
+        .k_text {
+            color: #555 !important;
+            font-size: 0.8em;
+        }
+
+        .k_claim_no {
+            font-weight: 700;
+            color: #067ab4;
+        }
+
+        .k_footerbottom {
+            min-height: 409px;
+        }
+
+        .k_a {
+            color: #555 !important;
+            font-size: 0.9em;
+            text-decoration: none;
+            margin-top: 35px;
+            font-family: helvetica, arial, sans-serif;
+        }
+
+        .k_mleft {
+            margin-right: 25px;
+        }
+
+        .k_bg2 {
+            background-color: #f7f7f7;
+        }
+
+        .k_box1 {
+            width: 20.5%;
+            letter-spacing: .2px;
+        }
+
+        .k_box3 {
+            min-width: 320px;
+        }
+
+        .k_box4 {
+            width: 14%;
+            margin-left: 20px;
+        }
+
+        .k_contact {
+            color: #292e32;
+        }
+
+        .k_fb {
+            color: #187af0;
+        }
+
+        .k_tw {
+            color: #189eec;
+            width: 50px;
+        }
+
+        .k_privacy {
+            font-size: 1em;
+            text-decoration: none !important;
+            padding: 5px 5px;
+        }
+
+        .k_bottom {}
+
+        .tbdr {
+            border: 1px dashed #000;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="container p-0">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container p-0">
+                <div>
+                    <img class="image-size d-none d-xl-block" src="img/yp.svg" alt="image not available">
                 </div>
-            </nav>
-        </header>
-        
-        <main>
-            <div class="container-fluid slider">
-                <div class=" container p-0 ">
-                    <h1 class="Chicago">Chicago, IL</h1>
+                <div class="ms-0">
+                    <img class="logo d-xl-none float-start " src="img/mobile_yp_logo.svg" alt="image not available">
+                </div>
+                <div class=" ms-2 d-none d-xl-block">
+                    <a href="#" class="browse">Browse <i class="fa-solid fa-caret-down pt-1 pe-1 pd-1 ps-0"></i> </a>
+                </div>
+                <form class="ms-3 input_form ">
+                    <div class=" border d-flex  form-control p-0" id="query-container">
+                        <div class="input_box  ps-3 pt-2 pb-2">
+                            <label for="">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </label>
+                            <input class="form-control d-inline r-input pe-0 ps-0" type="text"
+                                placeholder="What are you looking for?">
+                            <div class="border_after"></div>
+                        </div>
+
+                        <div class="input_box ps-3 pt-2 pb-2 ">
+                            <label for="">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </label>
+                            <input class="form-control d-inline ps-0" type="text" placeholder="Where?">
+                            <div class="border_after"></div>
+                        </div>
+                        <div class="search_btn">
+                            <button class="btn btn-warning p-2 text-dark fs-5  px-4 rounded-0">Find</button>
+                        </div>
+                    </div>
+                </form>
+                <button class="navbar-toggler border-0 " type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse ms-3 r-login " id="navbarSupportedContent">
+                    <ul class="navbar-nav  ">
+                        <li class="nav-item">
+                            <a class="text-dark fw-bold p-0" aria-current="page" href="./singup.html">Login</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fw-bold p-0" href="#">Sign Up</a>
+                        </li>
+
+                    </ul>
+
                 </div>
             </div>
-           
-            <div class="container  p-0">
-                <div class="d-flex justify-content-center">
-                    <h5 class="mt-4">Best of Chicago</h5>
-                </div>
-           
-                <div class="row  mt-3 d-flex justify-content-center">
-                    <div class="col-1  p-0 width  ">
-                        <a href="#">
-                            <div class="img  ms-3 ">
-                                <img class="restaurants " src="img/restaurants-1.svg" alt="image not available">
-                            </div>
-                            <span class="d-flex justify-content-center p-0">Restaurants</span>
-                        </a>
-                    </div>
-                    <div class="col-1 p-0 width " >
-                        <a href="#">
-                            <div class="img  ms-3">
-                                <img class="restaurants "  src="img/auto-repair-1.svg" alt="image not available">
-                            </div>
-                            <span class="d-flex justify-content-center p-0">Auto Repair</span>
-                        </a>
-                    </div>
-                    <div class="col-1 p-0 width ">
-                        <a href="#">
-                            <div class="img  ms-3">
-                                <img class="restaurants " src="img/doctors-1.svg" alt="image not available">
-                            </div>
-                            <span class="d-flex justify-content-center p-0">Doctors</span>
-                        </a>
-                    </div>
-                    <div class="col-1 p-0 width ">
-                        <a href="#">
-                            <div class="img  ms-3">
-                                <img class="restaurants "  src="img/plumbers-1.svg" alt="image not available">
-                            </div>
-                            <span class="d-flex justify-content-center p-0">Plumbers</span>
-                        </a>
-                    </div>
-                    <div class="col-1 p-0 width ">
-                        <a href="#">
-                            <div class="img  ms-3">
-                                <img class="restaurants"  src="img/animal-shelters-1.svg" alt="image not available">
-                            </div>
-                            <span class="ps-2">Animal Shelters</span>
-                        </a>
-                    </div>
-                    <div class="col-1 p-0 width ">
-                        <a href="#">
-                            <div class="img  ms-3">
-                                <img class="restaurants " src="img/insurance-1.svg" alt="image not available">
-                            </div>
-                            <span class="d-flex justify-content-center p-0">Insurance</span>
-                        </a>
-                    </div>
-                    <div class="col-1 p-0 width ">
-                        <a href="#">
-                            <div class="img  ms-3">
-                                <img class="restaurants " src="img/attorneys-1.svg" alt="image not available">
-                            </div>
-                            <span class="d-flex justify-content-center p-0">Attorneys</span>
-                        </a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container-fluid slider">
+            <div class=" container p-0 ">
+                <h1 class="Chicago">Chicago, IL</h1>
+            </div>
+        </div>
+
+        <div class="container  p-0">
+            <div class="d-flex justify-content-center">
+                <h5 class="mt-4">Best of Chicago</h5>
+            </div>
+
+            <div class="row  mt-3 d-flex justify-content-center">
+                <div class="col-1  p-0 width  ">
+                    <a href="#">
+                        <div class="img  ms-3 ">
+                            <img class="restaurants " src="img/restaurants-1.svg" alt="image not available">
                         </div>
-                    <div class="col-1 p-0 width ">
-                        <a href="#">
-                            <div class="img  ms-3">
-                                <img class="restaurants " src="img/massage-1.svg" alt="image not available">
-                            </div>
-                            <span class="d-flex justify-content-center p-0">Massage</span>
-                        </a>
-                    </div>
-                    
+                        <span class="d-flex justify-content-center p-0">Restaurants</span>
+                    </a>
                 </div>
-                <section class="container row second-container col-12" style="margin-left: 10px !important;">
-                    <section class="section-box col-3 p-3 me-3 col-lg-3 first-perent  text-light rounded-2 sec_h" id="popular-businesses">
-                     <div class=" m-0 first-div" >
+                <div class="col-1 p-0 width ">
+                    <a href="#">
+                        <div class="img  ms-3">
+                            <img class="restaurants " src="img/auto-repair-1.svg" alt="image not available">
+                        </div>
+                        <span class="d-flex justify-content-center p-0">Auto Repair</span>
+                    </a>
+                </div>
+                <div class="col-1 p-0 width ">
+                    <a href="#">
+                        <div class="img  ms-3">
+                            <img class="restaurants " src="img/doctors-1.svg" alt="image not available">
+                        </div>
+                        <span class="d-flex justify-content-center p-0">Doctors</span>
+                    </a>
+                </div>
+                <div class="col-1 p-0 width ">
+                    <a href="#">
+                        <div class="img  ms-3">
+                            <img class="restaurants " src="img/plumbers-1.svg" alt="image not available">
+                        </div>
+                        <span class="d-flex justify-content-center p-0">Plumbers</span>
+                    </a>
+                </div>
+                <div class="col-1 p-0 width ">
+                    <a href="#">
+                        <div class="img  ms-3">
+                            <img class="restaurants" src="img/animal-shelters-1.svg" alt="image not available">
+                        </div>
+                        <span class="ps-2">Animal Shelters</span>
+                    </a>
+                </div>
+                <div class="col-1 p-0 width ">
+                    <a href="#">
+                        <div class="img  ms-3">
+                            <img class="restaurants " src="img/insurance-1.svg" alt="image not available">
+                        </div>
+                        <span class="d-flex justify-content-center p-0">Insurance</span>
+                    </a>
+                </div>
+                <div class="col-1 p-0 width ">
+                    <a href="#">
+                        <div class="img  ms-3">
+                            <img class="restaurants " src="img/attorneys-1.svg" alt="image not available">
+                        </div>
+                        <span class="d-flex justify-content-center p-0">Attorneys</span>
+                    </a>
+                </div>
+                <div class="col-1 p-0 width ">
+                    <a href="#">
+                        <div class="img  ms-3">
+                            <img class="restaurants " src="img/massage-1.svg" alt="image not available">
+                        </div>
+                        <span class="d-flex justify-content-center p-0">Massage</span>
+                    </a>
+                </div>
+
+            </div>
+            <section class="container row second-container col-12" style="margin-left: 10px !important;">
+                <section class="section-box col-3 p-3 me-3 col-lg-3 first-perent  text-light rounded-2 sec_h"
+                    id="popular-businesses">
+                    <div class=" m-0 first-div">
                         <label for="" class=" star fs-3">
                             <i class="fa-solid fa-star "></i>
                         </label>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 26" width="28" height="26">
-                                <use xlink:href="#star-icon"></use>
-                            </svg>
-                            <h2>Popular Businesses
-                                <span>in Chicago</span>
-                            </h2>
-                            <ul>
-                                <li class="address p-2 mt-2 " style=" list-style-type: none;">
-                                    <a href="#" >River North - Lou Malnati's Pizzeria
-                                        <p>439 N Wells St, Chicago, IL 60654</p>
-                                    </a>
-                                </li>
-                                <li class="address p-2 mt-2 " style=" list-style-type: none;" >
-                                    <a href="#">Giordano's
-                                        <p>730 N Rush St, Chicago, IL 60611</p>
-                                    </a>
-                                </li>
-                            </ul>
-                            <div class=" button d-flex justify-content-center">
-                                <a class="see-more" href="#" data-analytics="{&quot;click_id&quot;:304}" data-impressed="1">Search for more </a>
-                            </div>
-                        </div>
-                    </section>
-                    <section class="section-box col-3  p-3  me-3 col-lg-3 second-perent text-light rounded-2 sec_h" id="trends">
-                        <svg xmlns="#" viewBox="0 0 24 24" width="24" height="24">
-                            <use xlink:href="#chart-yline"></use>
-                            <use xlink:href="#chart-bars-xline"></use>
-                            <use xlink:href="#chart-dot-connectors"></use>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 26" width="28" height="26">
+                            <use xlink:href="#star-icon"></use>
                         </svg>
-                        <h2>Trending Searches
+                        <h2>Popular Businesses
                             <span>in Chicago</span>
                         </h2>
                         <ul>
-                            <li class=" address p-2 mt-2 d-flex justify-content-center">
-                                <a href="#">Restaurants</a>
+                            <li class="address p-2 mt-2 " style=" list-style-type: none;">
+                                <a href="#">River North - Lou Malnati's Pizzeria
+                                    <p>439 N Wells St, Chicago, IL 60654</p>
+                                </a>
                             </li>
-                            <li class="address p-2 mt-2 d-flex justify-content-center">
-                                <a href="#">Garbage Dump Sites</a>
-                            </li>
-                            <li class="address p-2 mt-2 d-flex justify-content-center">
-                                <a href="#">24 Hour Pawn Shops</a>
+                            <li class="address p-2 mt-2 " style=" list-style-type: none;">
+                                <a href="#">Giordano's
+                                    <p>730 N Rush St, Chicago, IL 60611</p>
+                                </a>
                             </li>
                         </ul>
-                        <div class="button button-2 d-flex justify-content-center">
-                            <a class="see-more" href="#" data-analytics="{&quot;click_id&quot;:304}" data-impressed="1">Search for more </a>
-                        </div>
-                    </section>
-                    <section  class="col-3  p-3  me-3 col-lg-3 therd-perent text-light rounded-2 sec_h">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 24" width="17" height="24">
-                            <use xlink:href="#pin-inner-circle"></use><use xlink:href="#pin-outer-circle"></use>
-                        </svg>
-                        <h2>Nearby Cities
-                            <span>in Chicago</span>
-                        </h2>
-                        <div class="col-12 row 0 sec_1 ">
-                            <div class="  col-6">
-                                <ul class=" col-xs-2">
-                                    <li  class=" address3  p-2 mt-2 " style=" list-style-type: none;">
-                                        <a href="#">OakPark</a>
-                                    </li>
-                                </ul>
-                                <ul class=" col col-xs-2">
-                                    <li  class=" address3 p-2 mt-2"style=" list-style-type: none;">
-                                        <a href="#">Berwyn</a>
-                                    </li>
-                                </ul>
-                                <ul class=" col col-xs-2">
-                                    <li  class="address3 p-2 mt-2"style=" list-style-type: none;">
-                                        <a href="#">Cicero</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class=" col col-6">
-                                <ul class=" col col-xs-2">
-                                    <li  class="address3 p-2 mt-2"style=" list-style-type: none;">
-                                        <a href="#">Riverside</a>
-                                    </li>
-                                </ul>
-                                <ul class=" col col-xs-2">
-                                    <li  class="address3 p-2 mt-2"style=" list-style-type: none;">
-                                        <a href="#">ForestPark</a>
-                                    </li>
-                                </ul>
-                                <ul class="col col-xs-2">
-                                    <li  class="address3 p-2 mt-2"style=" list-style-type: none;">
-                                        <a href="#">RiverForest</a>
-                                    </li>
-                                </ul>
-                            </div>
-                           
-                            <div class="button button-3 d-flex justify-content-center">
-                                <a href="#">Explore other cities</a>
-                            </div>
-                        </div>
-                    </section>
-                </section>
-                <section class="container">
-                    <div class="bg-layer mt-2">
-                        <h2 class="sub-heading d-flex justify-content-center ">Popular Categories</h2>
-                        <br>
-                    </div>
-                </section>
-                <section class="top" id="categories">
-                    <div class="row col-12 ">
-                        <div class="category col col-xs-4">
-                            <h2>
-                                <img class="icon" src="//i3.ypcdn.com/ypu/images/svgs/categories/popular-restaurants.svg?76bad71" alt="Popular Restaurants">Popular Restaurants
-                            </h2>
-                                <ul class="listings">
-                                    <li style=" list-style-type: none;">
-                                        <a class="listing-name" href="#">Italian Fiesta Pizzeria</a>
-                                        <div class="address">
-                                            <span>8058 S Halsted St</span>
-                                            <span>Chicago, IL 60620</span>
-                                        </div>
-                                    </li>
-                                    <li style=" list-style-type: none;">
-                                        <a class="listing-name" href="#">Italian Fiesta Pizzeria</a>
-                                        <div class="address">
-                                            <span>1306 E 47th St</span>
-                                            <span>Chicago, IL 60653</span>
-                                        </div>
-                                    </li>
-                                    <li style=" list-style-type: none;">
-                                        <a class="listing-name" href="#">Ferrara Original Inc.</a>
-                                        <div class="address">
-                                            <span>2210 W Taylor St</span>
-                                            <span>Chicago, IL 60612</span>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        <div class="category col col-sm-4">
-                            <h2>
-                                <img class="icon" src="//i3.ypcdn.com/ypu/images/svgs/categories/popular-restaurants.svg?76bad71" alt="Popular Restaurants">Popular Restaurants
-                            </h2>
-                                <ul class="listings">
-                                    <li style=" list-style-type: none;">
-                                        <a class="listing-name" href="#">Italian Fiesta Pizzeria</a>
-                                        <div class="address">
-                                            <span>8058 S Halsted St</span>
-                                            <span>Chicago, IL 60620</span>
-                                        </div>
-                                    </li>
-                                    <li style=" list-style-type: none;">
-                                        <a class="listing-name" href="#">Italian Fiesta Pizzeria</a>
-                                        <div class="address">
-                                            <span>1306 E 47th St</span>
-                                            <span>Chicago, IL 60653</span>
-                                        </div>
-                                    </li>
-                                    <li style=" list-style-type: none;">
-                                        <a class="listing-name" href="#">Ferrara Original Inc.</a>
-                                        <div class="address">
-                                            <span>2210 W Taylor St</span>
-                                            <span>Chicago, IL 60612</span>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        <div class="category col col-sm-4">
-                            <h2>
-                                <img class="icon" src="//i3.ypcdn.com/ypu/images/svgs/categories/popular-restaurants.svg?76bad71" alt="Popular Restaurants">Popular Restaurants
-                            </h2>
-                                <ul class="listings">
-                                    <li style=" list-style-type: none;">
-                                        <a class="listing-name" href="#">Italian Fiesta Pizzeria</a>
-                                        <div class="address">
-                                            <span>8058 S Halsted St</span>
-                                            <span>Chicago, IL 60620</span>
-                                        </div>
-                                    </li>
-                                    <li style=" list-style-type: none;">
-                                        <a class="listing-name" href="#">Italian Fiesta Pizzeria</a>
-                                        <div class="address">
-                                            <span>1306 E 47th St</span>
-                                            <span>Chicago, IL 60653</span>
-                                        </div>
-                                    </li>
-                                    <li style=" list-style-type: none;">
-                                        <a class="listing-name" href="#">Ferrara Original Inc.</a>
-                                        <div class="address">
-                                            <span>2210 W Taylor St</span>
-                                            <span>Chicago, IL 60612</span>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        <div class="category col col-xs-4">
-                            <h2>
-                                <img class="icon" src="//i3.ypcdn.com/ypu/images/svgs/categories/popular-restaurants.svg?76bad71" alt="Popular Restaurants">Popular Restaurants
-                            </h2>
-                                <ul class="listings">
-                                    <li style=" list-style-type: none;">
-                                        <a class="listing-name" href="#">Italian Fiesta Pizzeria</a>
-                                        <div class="address">
-                                            <span>8058 S Halsted St</span>
-                                            <span>Chicago, IL 60620</span>
-                                        </div>
-                                    </li>
-                                    <li style=" list-style-type: none;">
-                                        <a class="listing-name" href="#">Italian Fiesta Pizzeria</a>
-                                        <div class="address">
-                                            <span>1306 E 47th St</span>
-                                            <span>Chicago, IL 60653</span>
-                                        </div>
-                                    </li>
-                                    <li style=" list-style-type: none;">
-                                        <a class="listing-name" href="#">Ferrara Original Inc.</a>
-                                        <div class="address">
-                                            <span>2210 W Taylor St</span>
-                                            <span>Chicago, IL 60612</span>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        <div class="category col col-sm-4">
-                            <h2>
-                                <img class="icon" src="//i3.ypcdn.com/ypu/images/svgs/categories/popular-restaurants.svg?76bad71" alt="Popular Restaurants">Popular Restaurants
-                            </h2>
-                                <ul class="listings">
-                                    <li style=" list-style-type: none;">
-                                        <a class="listing-name" href="#">Italian Fiesta Pizzeria</a>
-                                        <div class="address">
-                                            <span>8058 S Halsted St</span>
-                                            <span>Chicago, IL 60620</span>
-                                        </div>
-                                    </li>
-                                    <li style=" list-style-type: none;">
-                                        <a class="listing-name" href="#">Italian Fiesta Pizzeria</a>
-                                        <div class="address">
-                                            <span>1306 E 47th St</span>
-                                            <span>Chicago, IL 60653</span>
-                                        </div>
-                                    </li>
-                                    <li style=" list-style-type: none;">
-                                        <a class="listing-name" href="#">Ferrara Original Inc.</a>
-                                        <div class="address">
-                                            <span>2210 W Taylor St</span>
-                                            <span>Chicago, IL 60612</span>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        <div class="category col col-sm-4">
-                            <h2>
-                                <img class="icon" src="//i3.ypcdn.com/ypu/images/svgs/categories/popular-restaurants.svg?76bad71" alt="Popular Restaurants">
-                                Popular Restaurants
-                            </h2>
-                                <ul class="listings">
-                                    <li style="">
-                                        <a class="listing-name" href="#">Italian Fiesta Pizzeria</a>
-                                        <div class="address">
-                                            <span>8058 S Halsted St</span>
-                                            <span>Chicago, IL 60620</span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a class="listing-name" href="#">Italian Fiesta Pizzeria</a>
-                                        <div class="address">
-                                            <span>1306 E 47th St</span>
-                                            <span>Chicago, IL 60653</span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a class="listing-name" href="#">Ferrara Original Inc.</a>
-                                        <div class="address">
-                                            <span>2210 W Taylor St</span>
-                                            <span>Chicago, IL 60612</span>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                    </div>    
-                </section>
-                <section class="container section-box coupons citypages " id="coupons">
-                    <div class="bg-layer mt-2 ">
-                        <h2 class="sub-heading d-flex justify-content-center ">Coupons & Deals</h2>
-                        <br>
-                    </div>
-                    <div class="row col-12">
-                        <div class="col-sm-3">
-                            <ul>
-                                <li class="coupon-modal-source">
-                                    <div class="coupon">
-                                        <a class="coupon-link">
-                                            <img class="coupon-img" src="/img/bcb4bfc09981fe7bafdc811650cdfed88c9e8355_227x150_crop.jpg" width="227" height="150">
-                                            <div class="coupon-title">
-                                                <p>12% Off Takeout Premium Sushi fo…</p>
-                                            </div>
-                                            <div class="coupon-listing-name">Arami</div>
-                                            <div class="coupon-citystate">Chicago, IL</div>
-                                            <div class="coupon-value">
-                                                <span class="actual-price">$99</span>
-                                                <span class="original-price">$113</span>
-                                            </div>
-                                        </a>
-                                        <div class="favorites-actions">
-                                            <a class="add-to-favorites add" href="#">
-                                                <svg viewBox="0 0 10 16" width="10" height="16">
-                                                </svg>
-                                                Save
-                                            </a>
-                                                <a class="add-to-favorites remove" href="#">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 16" width="10" height="16">
-                                                    </svg>
-                                                    Remove
-                                                </a>
-                                                <div class="added-message success">
-                                                    <p>
-                                                        <strong>This coupon was added to Favorites</strong>
-                                                    </p>
-                                                </div>
-                                                <div class="added-message fail">
-                                                        <p>
-                                                            <strong>Error when adding a coupon to Favorites</strong>
-                                                        </p>
-                                                    </div>
-                                                    <div class="added-message removed">
-                                                        <p>
-                                                            <strong>This coupon was removed from Favorites</strong>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                </li>
-                            </ul>
-
-                        </div>
-                        <div class="col-sm-3">
-                            <ul>
-                                <li class="coupon-modal-source">
-                                    <div class="coupon">
-                                        <a class="coupon-link">
-                                            <img class="coupon-img" src="/img/2004832341a45fef8cdd39e46a1ed56a455bcbff_227x150_crop.jpg" width="227" height="150">
-                                            <div class="coupon-title">
-                                                <p>12% Off Takeout Premium Sushi fo…</p>
-                                            </div>
-                                            <div class="coupon-listing-name">Arami</div>
-                                            <div class="coupon-citystate">Chicago, IL</div>
-                                            <div class="coupon-value">
-                                                <span class="actual-price">$99</span>
-                                                <span class="original-price">$113</span>
-                                            </div>
-                                        </a>
-                                        <div class="favorites-actions">
-                                            <a class="add-to-favorites add" href="#">
-                                                <svg viewBox="0 0 10 16" width="10" height="16">
-                                                    <polygon points="0.5 0.5, 9.5 0.5, 9.5 15 , 5 11.5, 0.5 15"></polygon>
-                                                </svg>
-                                                Save
-                                            </a>
-                                                <a class="add-to-favorites remove" href="#">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 16" width="10" height="16">
-                                                        
-                                                        <polygon points="0.5 0.5, 9.5 0.5, 9.5 15 , 5 11.5, 0.5 15"></polygon>
-                                                    </svg>
-                                                    Remove
-                                                </a>
-                                                <div class="added-message success">
-                                                    <p>
-                                                        <strong>This coupon was added to Favorites</strong>
-                                                    </p>
-                                                </div>
-                                                <div class="added-message fail">
-                                                        <p>
-                                                            <strong>Error when adding a coupon to Favorites</strong>
-                                                        </p>
-                                                    </div>
-                                                    <div class="added-message removed">
-                                                        <p>
-                                                            <strong>This coupon was removed from Favorites</strong>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                </li>
-                            </ul>
-
-                        </div>
-                        <div class="col-sm-3">
-                            <ul>
-                                <li class="coupon-modal-source">
-                                    <div class="coupon">
-                                        <a class="coupon-link">
-                                            <img class="coupon-img" src="/img/food_4.jpg" width="227" height="150">
-                                            <div class="coupon-title">
-                                                <p>12% Off Takeout Premium Sushi fo…</p>
-                                            </div>
-                                            <div class="coupon-listing-name">Arami</div>
-                                            <div class="coupon-citystate">Chicago, IL</div>
-                                            <div class="coupon-value">
-                                                <span class="actual-price">$99</span>
-                                                <span class="original-price">$113</span>
-                                            </div>
-                                        </a>
-                                        <div class="favorites-actions">
-                                            <a class="add-to-favorites add" href="#">
-                                                <svg viewBox="0 0 10 16" width="10" height="16">
-                                                    <polygon points="0.5 0.5, 9.5 0.5, 9.5 15 , 5 11.5, 0.5 15"></polygon>
-                                                </svg>
-                                                Save
-                                            </a>
-                                                <a class="add-to-favorites remove" href="#">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 16" width="10" height="16">
-                                                        
-                                                        <polygon points="0.5 0.5, 9.5 0.5, 9.5 15 , 5 11.5, 0.5 15"></polygon>
-                                                    </svg>
-                                                    Remove
-                                                </a>
-                                                <div class="added-message success">
-                                                    <p>
-                                                        <strong>This coupon was added to Favorites</strong>
-                                                    </p>
-                                                </div>
-                                                <div class="added-message fail">
-                                                        <p>
-                                                            <strong>Error when adding a coupon to Favorites</strong>
-                                                        </p>
-                                                    </div>
-                                                    <div class="added-message removed">
-                                                        <p>
-                                                            <strong>This coupon was removed from Favorites</strong>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                       </div>
-                                </li>
-                            </ul>
-
-                        </div>
-                        <div class="col-sm-3">
-                            <ul>
-                                <li class="coupon-modal-source">
-                                    <div class="coupon">
-                                        <a class="coupon-link">
-                                            <img class="coupon-img" src="/img/coupn_citry.jpg" width="227" height="150">
-                                            <div class="coupon-title">
-                                                <p>12% Off Takeout Premium Sushi fo…</p>
-                                            </div>
-                                            <div class="coupon-listing-name">Arami</div>
-                                            <div class="coupon-citystate">Chicago, IL</div>
-                                            <div class="coupon-value">
-                                                <span class="actual-price">$99</span>
-                                                <span class="original-price">$113</span>
-                                            </div>
-                                        </a>
-                                        <div class="favorites-actions">
-                                            <a class="add-to-favorites add" href="#">
-                                                <svg viewBox="0 0 10 16" width="10" height="16">
-                                                    <polygon points="0.5 0.5, 9.5 0.5, 9.5 15 , 5 11.5, 0.5 15"></polygon>
-                                                </svg>
-                                                Save
-                                            </a>
-                                                <a class="add-to-favorites remove" href="#">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 16" width="10" height="16">
-                                                        
-                                                        <polygon points="0.5 0.5, 9.5 0.5, 9.5 15 , 5 11.5, 0.5 15"></polygon>
-                                                    </svg>
-                                                    Remove
-                                                </a>
-                                                <div class="added-message success">
-                                                    <p>
-                                                        <strong>This coupon was added to Favorites</strong>
-                                                    </p>
-                                                </div>
-                                                <div class="added-message fail">
-                                                        <p>
-                                                            <strong>Error when adding a coupon to Favorites</strong>
-                                                        </p>
-                                                    </div>
-                                                    <div class="added-message removed">
-                                                        <p>
-                                                            <strong>This coupon was removed from Favorites</strong>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                       </div>
-                                </li>
-                            </ul>
-
-                        </div>
-                        <div class="col-sm-3">
-                            <ul>
-                                <li class="coupon-modal-source">
-                                    <div class="coupon">
-                                        <a class="coupon-link">
-                                            <img class="coupon-img" src="/img/food_5.jpg" width="227" height="150">
-                                            <div class="coupon-title">
-                                                <p>12% Off Takeout Premium Sushi fo…</p>
-                                            </div>
-                                            <div class="coupon-listing-name">Arami</div>
-                                            <div class="coupon-citystate">Chicago, IL</div>
-                                            <div class="coupon-value">
-                                                <span class="actual-price">$99</span>
-                                                <span class="original-price">$113</span>
-                                            </div>
-                                        </a>
-                                        <div class="favorites-actions">
-                                            <a class="add-to-favorites add" href="#">
-                                                <svg viewBox="0 0 10 16" width="10" height="16">
-                                                    <polygon points="0.5 0.5, 9.5 0.5, 9.5 15 , 5 11.5, 0.5 15"></polygon>
-                                                </svg>
-                                                Save
-                                            </a>
-                                                <a class="add-to-favorites remove" href="#">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 16" width="10" height="16">
-                                                        
-                                                        <polygon points="0.5 0.5, 9.5 0.5, 9.5 15 , 5 11.5, 0.5 15"></polygon>
-                                                    </svg>
-                                                    Remove
-                                                </a>
-                                                <div class="added-message success">
-                                                    <p>
-                                                        <strong>This coupon was added to Favorites</strong>
-                                                    </p>
-                                                </div>
-                                                <div class="added-message fail">
-                                                        <p>
-                                                            <strong>Error when adding a coupon to Favorites</strong>
-                                                        </p>
-                                                    </div>
-                                                    <div class="added-message removed">
-                                                        <p>
-                                                            <strong>This coupon was removed from Favorites</strong>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                       </div>
-                                </li>
-                            </ul>
-
-                        </div>
-                        <div class="col-sm-3">
-                            <ul>
-                                <li class="coupon-modal-source">
-                                    <div class="coupon">
-                                        <a class="coupon-link">
-                                            <img class="coupon-img" src="/img/kitchn.jpg" width="227" height="150">
-                                            <div class="coupon-title">
-                                                <p>12% Off Takeout Premium Sushi fo…</p>
-                                            </div>
-                                            <div class="coupon-listing-name">Arami</div>
-                                            <div class="coupon-citystate">Chicago, IL</div>
-                                            <div class="coupon-value">
-                                                <span class="actual-price">$99</span>
-                                                <span class="original-price">$113</span>
-                                            </div>
-                                        </a>
-                                        <div class="favorites-actions">
-                                            <a class="add-to-favorites add" href="#">
-                                                <svg viewBox="0 0 10 16" width="10" height="16">
-                                                    <polygon points="0.5 0.5, 9.5 0.5, 9.5 15 , 5 11.5, 0.5 15"></polygon>
-                                                </svg>
-                                                Save
-                                            </a>
-                                                <a class="add-to-favorites remove" href="#">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 16" width="10" height="16">
-                                                        
-                                                        <polygon points="0.5 0.5, 9.5 0.5, 9.5 15 , 5 11.5, 0.5 15"></polygon>
-                                                    </svg>
-                                                    Remove
-                                                </a>
-                                                <div class="added-message success">
-                                                    <p>
-                                                        <strong>This coupon was added to Favorites</strong>
-                                                    </p>
-                                                </div>
-                                                <div class="added-message fail">
-                                                        <p>
-                                                            <strong>Error when adding a coupon to Favorites</strong>
-                                                        </p>
-                                                    </div>
-                                                    <div class="added-message removed">
-                                                        <p>
-                                                            <strong>This coupon was removed from Favorites</strong>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                       </div>
-                                </li>
-                            </ul>
-
-                        </div>
-                        <div class="col-sm-3">
-                            <ul>
-                                <li class="coupon-modal-source">
-                                    <div class="coupon">
-                                        <a class="coupon-link">
-                                            <img class="coupon-img" src="/img/maggi.jpg" width="227" height="150">
-                                            <div class="coupon-title">
-                                                <p>12% Off Takeout Premium Sushi fo…</p>
-                                            </div>
-                                            <div class="coupon-listing-name">Arami</div>
-                                            <div class="coupon-citystate">Chicago, IL</div>
-                                            <div class="coupon-value">
-                                                <span class="actual-price">$99</span>
-                                                <span class="original-price">$113</span>
-                                            </div>
-                                        </a>
-                                        <div class="favorites-actions">
-                                            <a class="add-to-favorites add" href="#">
-                                                <svg viewBox="0 0 10 16" width="10" height="16">
-                                                    <polygon points="0.5 0.5, 9.5 0.5, 9.5 15 , 5 11.5, 0.5 15"></polygon>
-                                                </svg>
-                                                Save
-                                            </a>
-                                                <a class="add-to-favorites remove" href="#">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 16" width="10" height="16">
-                                                        
-                                                        <polygon points="0.5 0.5, 9.5 0.5, 9.5 15 , 5 11.5, 0.5 15"></polygon>
-                                                    </svg>
-                                                    Remove
-                                                </a>
-                                                <div class="added-message success">
-                                                    <p>
-                                                        <strong>This coupon was added to Favorites</strong>
-                                                    </p>
-                                                </div>
-                                                <div class="added-message fail">
-                                                        <p>
-                                                            <strong>Error when adding a coupon to Favorites</strong>
-                                                        </p>
-                                                    </div>
-                                                    <div class="added-message removed">
-                                                        <p>
-                                                            <strong>This coupon was removed from Favorites</strong>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                       </div>
-                                </li>
-                            </ul>
-
-                        </div>
-                        <div class="col-sm-3">
-                            <ul>
-                                <li class="coupon-modal-source">
-                                    <div class="coupon">
-                                        <a class="coupon-link">
-                                            <img class="coupon-img" src="/img/food_6.jpg" width="227" height="150">
-                                            <div class="coupon-title">
-                                                <p>12% Off Takeout Premium Sushi fo…</p>
-                                            </div>
-                                            <div class="coupon-listing-name">Arami</div>
-                                            <div class="coupon-citystate">Chicago, IL</div>
-                                            <div class="coupon-value">
-                                                <span class="actual-price">$99</span>
-                                                <span class="original-price">$113</span>
-                                            </div>
-                                        </a>
-                                        <div class="favorites-actions">
-                                            <a class="add-to-favorites add" href="#">
-                                                <svg viewBox="0 0 10 16" width="10" height="16">
-                                                    <polygon points="0.5 0.5, 9.5 0.5, 9.5 15 , 5 11.5, 0.5 15"></polygon>
-                                                </svg>
-                                                Save
-                                            </a>
-                                                <a class="add-to-favorites remove" href="#">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 16" width="10" height="16">
-                                                        
-                                                        <polygon points="0.5 0.5, 9.5 0.5, 9.5 15 , 5 11.5, 0.5 15"></polygon>
-                                                    </svg>
-                                                    Remove
-                                                </a>
-                                                <div class="added-message success">
-                                                    <p>
-                                                        <strong>This coupon was added to Favorites</strong>
-                                                    </p>
-                                                </div>
-                                                <div class="added-message fail">
-                                                        <p>
-                                                            <strong>Error when adding a coupon to Favorites</strong>
-                                                        </p>
-                                                    </div>
-                                                    <div class="added-message removed">
-                                                        <p>
-                                                            <strong>This coupon was removed from Favorites</strong>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                       </div>
-                                </li>
-                            </ul>
-
+                        <div class=" button d-flex justify-content-center">
+                            <a class="see-more" href="#" data-analytics="{&quot;click_id&quot;:304}"
+                                data-impressed="1">Search for more </a>
                         </div>
                     </div>
                 </section>
-                <section class="popular-cats">
-                        <h2 style="margin:auto;">Popular Categories</h2>
-                        <div class="row col-12">
-                            <div class="col-sm-3">
-                                <article>
-                                    <h3 class="expand-icon">HOME SERVICES</h3>
-                                    <div class="row expand-area">
-                                        <a href="#" class="main_a_a">Storage Units</a>
-                                        <a href="#" class="main_a_a">Plumbers</a>
-                                        <a href="#" class="main_a_a">Electricians</a>
-                                        <a href="#" class="main_a_a">Carpet Cleaning</a>
-                                        <a href="#" class="main_a_a">Moving Companies</a>
-                                        <a href="#" class="main_a_a">Pest Control Services</a>
-                                        <a href="#" class="main_a_a">Self Storage</a>
-                                        <a href="#" class="main_a_a">Appliance Repair</a>
-                                        <a href="-#">Garage Door Repair</a>
-                                        <a href="#" class="main_a_a">Appliance Parts</a>
-                                        <a href="#" class="main_a_a">Cleaning Services</a>
-                                        <a href="#" class="main_a_a">Lawn Mower Repair</a>
-                                        <a href="#" class="main_a_a">Moving Truck Rental</a>
-                                        <a href="#" class="main_a_a">AC Repair</a>
-                                        <a href="#" class="main_a_a">Home Security System Installation</a>
-                                        <a href="#" class="main_a_a">Garden Centers</a>
-                                        <a href="#" class="main_a_a">Refrigerator Repair</a>
-                                        <a href="#" class="main_a_a">Plant Nurseries</a>
-                                        <a href="#" class="main_a_a">Tree Service</a>
-                                        <a href="#" class="main_a_a">General Contractors</a>
-                                    </div>
-                                </article>
-
-                            </div>
-                            <div class="col-sm-3">
-                                <article>
-                                    <h3 class="expand-icon">MEDICAL SERVICES</h3>
-                                    <div class="row expand-area">
-                                        <a href="#" class="main_a_a">Dentists</a>
-                                        <a href="#" class="main_a_a">Dermatologists</a>
-                                        <a href="#" class="main_a_a">Optometrists</a>
-                                        <a href="#" class="main_a_a">Physical Therapy </a>
-                                        <a href="#" class="main_a_a">Hospitals</a>
-                                        <a href="#" class="main_a_a">Endocrinologists</a>
-                                        <a href="#" class="main_a_a">Gynecologists</a>
-                                        <a href="#" class="main_a_a">Podiatrists</a>
-                                        <a href="-#" class="main_a_a">Neurologistsr</a>
-                                        <a href="#" class="main_a_a">Ophthalmologists</a>
-                                        <a href="#" class="main_a_a">Gastroenterologists</a>
-                                        <a href="#" class="main_a_a">Pediatricians</a>
-                                        <a href="#" class="main_a_a">Orthodontists</a>
-                                        <a href="#" class="main_a_a">Urologists</a>
-                                        <a href="#" class="main_a_a">Rheumatologists</a>
-                                        <a href="#" class="main_a_a">Obgyn</a>
-                                        <a href="#" class="main_a_a">Physicians</a>
-                                        <a href="#" class="main_a_a">Cardiologists</a>
-                                        <a href="#" class="main_a_a">Radiology</a>
-                                        <a href="#" class="main_a_a">Pediatric Dentists</a>
-                                    </div>
-                                </article>
-
-                            </div>
-                            <div class="col-sm-3">
-                                <article>
-                                    <h3 class="expand-icon">AUTO SERVICES</h3>
-                                    <div class="row expand-area">
-                                        <a href="#" class="main_a_a">Auto Parts</a>
-                                        <a href="#" class="main_a_a">Oil Change</a>
-                                        <a href="#" class="main_a_a">Tire Shops</a>
-                                        <a href="#" class="main_a_a">Auto Repair</a>
-                                        <a href="#" class="main_a_a">Window Tinting</a>
-                                        <a href="#" class="main_a_a">Towing</a>
-                                        <a href="#" class="main_a_a">Auto Body Shops</a>
-                                        <a href="#" class="main_a_a">Car Detailing</a>
-                                        <a href="-#">Roadside Assistance</a>
-                                        <a href="#" class="main_a_a">Auto Glass Repair</a>
-                                        <a href="#" class="main_a_a">Tire Repair</a>
-                                        <a href="#" class="main_a_a">Auto Salvage</a>
-                                        <a href="#" class="main_a_a">Auto Glass</a>
-                                        <a href="#" class="main_a_a">Car Accessories</a>
-                                        <a href="#" class="main_a_a">Wheel Alignment</a>
-                                        <a href="#" class="main_a_a">Used Car Parts</a>
-                                        <a href="#" class="main_a_a">Car Transport</a>
-                                        <a href="#" class="main_a_a">Paintless Dent Repair</a>
-                                        <a href="#" class="main_a_a">Radiator Repair</a>
-                                        <a href="#" class="main_a_a">Car Alarm Installation</a>
-                                    </div>
-                                </article>
-
-                            </div>
-                            <div class="col-sm-3">
-                                <article>
-                                    <h3 class="expand-icon">LEGAL SERVICES</h3>
-                                    <div class="row expand-area">
-                                        <a href="#" class="main_a_a">Bail Bonds</a>
-                                        <a href="#" class="main_a_a">Private Investigators</a>
-                                        <a href="#" class="main_a_a">Stenographers</a>
-                                        <a href="#" class="main_a_a">Divorce Attorneys</a>
-                                        <a href="#" class="main_a_a">Lie Detector Tests</a>
-                                        <a href="#" class="main_a_a">Car Accident Lawyers</a>
-                                        <a href="#" class="main_a_a">Family Law Attorneys</a>
-                                        <a href="#" class="main_a_a">Bankruptcy Attorneys</a>
-                                        <a href="#" class="main_a_a">Process Servers</a>
-                                        <a href="#" class="main_a_a">Tax Attorneys</a>
-                                        <a href="#" class="main_a_a">Fingerprinting Services</a>
-                                        <a href="#" class="main_a_a">Medical Malpractice Lawyers</a>
-                                        <a href="#" class="main_a_a">Accident Attorneys</a>
-                                        <a href="#" class="main_a_a">Child Custody Lawyers</a>
-                                        <a href="#" class="main_a_a">Business Lawyers</a>
-                                        <a href="#" class="main_a_a">Immigration Lawyers</a>
-                                        <a href="#" class="main_a_a">Workers Compensation Attorneys</a>
-                                        <a href="#" class="main_a_a">DUI Attorneys</a>
-                                        <a href="#" class="main_a_a">Civil Rights Attorneys</a>
-                                        <a href="#" class="main_a_a">Labor Law Attorneys</a>
-                                    </div>
-                                </article>
-
-                            </div>
-                            <div class="col-sm-3">
-                                <article>
-                                    <h3 class="expand-icon">RESTAURANTS</h3>
-                                    <div class="row expand-area">
-                                        <a href="#" class="main_a_a">Mexican Restaurants</a>
-                                        <a href="#" class="main_a_a">Sushi Bars</a>
-                                        <a href="#" class="main_a_a">Chinese Restaurants</a>
-                                        <a href="#" class="main_a_a">Italian Restaurants</a>
-                                        <a href="#" class="main_a_a">Thai Restaurants</a>
-                                        <a href="#" class="main_a_a">Breakfast Restaurants</a>
-                                        <a href="#" class="main_a_a">Seafood Restaurants</a>
-                                        <a href="#" class="main_a_a">Vegetarian Restaurants</a>
-                                        <a href="#" class="main_a_a">Korean Restaurants</a>
-                                        <a href="#" class="main_a_a">Cuban Restaurants</a>
-                                        <a href="#" class="main_a_a">Greek Restaurantss</a>
-                                        <a href="#" class="main_a_a">Soul Food Restaurants</a>
-                                        <a href="#" class="main_a_a">Japanese Restaurants</a>
-                                        <a href="#" class="main_a_a">French Restaurants</a>
-                                        <a href="#" class="main_a_a">German Restaurants</a>
-                                        <a href="#" class="main_a_a">Brazilian Restaurants</a>
-                                    </div>
-                                </article>
-
-                            </div>
-                            <div class="col-sm-3">
-                                <article>
-                                    <h3 class="expand-icon">INSURANCE</h3>
-                                    <div class="row expand-area">
-                                        <a href="#" class="main_a_a">Car Insurance</a>
-                                        <a href="#" class="main_a_a">Boat Insurance</a>
-                                        <a href="#" class="main_a_a">Business Insurance</a>
-                                        <a href="#" class="main_a_a">Dental Insurance</a>
-                                        <a href="#" class="main_a_a">Disability Insurance</a>
-                                        <a href="#" class="main_a_a">Flood Insurance</a>
-                                        <a href="#" class="main_a_a">Home Insurance</a>
-                                        <a href="#" class="main_a_a">Insurance</a>
-                                        <a href="#" class="main_a_a">Liability Insurance</a>
-                                        <a href="#" class="main_a_a">Life Insurance</a>
-                                        <a href="#" class="main_a_a">Long Term Care Insurance</a>
-                                        <a href="#" class="main_a_a">Motorcycle Insurance</a>
-                                        <a href="#" class="main_a_a">Pet Insurance</a>
-                                        <a href="#" class="main_a_a">Renters Insurance</a>
-                                        <a href="#" class="main_a_a">RV Insurance</a>
-                                        <a href="#" class="main_a_a">Title Insurance</a>
-                                        <a href="#" class="main_a_a">Travel Insurance</a>
-                                        <a href="#" class="main_a_a">Truck Insurance</a>
-                                    </div>
-                                </article>
-
-                            </div>
-                            <div class="col-sm-3">
-                                <article>
-                                    <h3 class="expand-icon">PET SERVICES</h3>
-                                    <div class="row expand-area">
-                                        <a href="#" class="main_a_a">Animal Shelters</a>
-                                        <a href="#" class="main_a_a">Dog Training</a>
-                                        <a href="#" class="main_a_a">Doggy Day Cares</a>
-                                        <a href="#" class="main_a_a">Emergency Vets</a>
-                                        <a href="#" class="main_a_a">Kennels</a>
-                                        <a href="#" class="main_a_a">Mobile Pet Grooming</a>
-                                        <a href="#" class="main_a_a">Pet Boarding</a>
-                                        <a href="#" class="main_a_a">Pet Cemeteries</a>
-                                        <a href="#" class="main_a_a">Pet Grooming</a>
-                                        <a href="#" class="main_a_a">Veterinary Clinics</a>
-                                    </div>
-                                </article>
-
-                            </div>
-                            <div class="col-sm-3">
-                                <article>
-                                    <h3 class="expand-icon">BEAUTY</h3>
-                                    <div class="row expand-area">
-                                        <a href="#" class="main_a_a">Massage</a>
-                                        <a href="#" class="main_a_a">Barber Shops</a>
-                                        <a href="#" class="main_a_a">Nail Salons</a>
-                                        <a href="#" class="main_a_a">Beauty Supplies</a>
-                                        <a href="#" class="main_a_a">Hair Removal</a>
-                                        <a href="#" class="main_a_a">Hair Stylists</a>
-                                        <a href="#" class="main_a_a">Facial Salons</a>
-                                        <a href="#" class="main_a_a">Beauty Salons</a>
-                                        <a href="#"class="main_a_a"> Day Spas</a>
-                                        <a href="#" class="main_a_a">Hair Supplies</a>
-                                    </div>
-                                </article>
-
-                            </div>
-                            
-                        </div>
-                   
+                <section class="section-box col-3  p-3  me-3 col-lg-3 second-perent text-light rounded-2 sec_h"
+                    id="trends">
+                    <svg xmlns="#" viewBox="0 0 24 24" width="24" height="24">
+                        <use xlink:href="#chart-yline"></use>
+                        <use xlink:href="#chart-bars-xline"></use>
+                        <use xlink:href="#chart-dot-connectors"></use>
+                    </svg>
+                    <h2>Trending Searches
+                        <span>in Chicago</span>
+                    </h2>
+                    <ul>
+                        <li class=" address p-2 mt-2 d-flex justify-content-center">
+                            <a href="#">Restaurants</a>
+                        </li>
+                        <li class="address p-2 mt-2 d-flex justify-content-center">
+                            <a href="#">Garbage Dump Sites</a>
+                        </li>
+                        <li class="address p-2 mt-2 d-flex justify-content-center">
+                            <a href="#">24 Hour Pawn Shops</a>
+                        </li>
+                    </ul>
+                    <div class="button button-2 d-flex justify-content-center">
+                        <a class="see-more" href="#" data-analytics="{&quot;click_id&quot;:304}"
+                            data-impressed="1">Search for more </a>
+                    </div>
                 </section>
-                <section class="container">
-                    <section class="section-box" id="thryv-scan-promo">
-                        <div class="container">
-                            <span class="offer-note">LIMITED TIME OFFER</span>
-                            <h2>What are consumers saying about your business online?</h2>
-                            <p>See how you score locally with this FAST, FREE online scan.
-                                 <strong>Get your rating out of 100 now.</strong>
-                            </p>
-                            <a class="btn" rel="noopener" href="#" >Begin Scan</a>
+                <section class="col-3  p-3  me-3 col-lg-3 therd-perent text-light rounded-2 sec_h">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 24" width="17" height="24">
+                        <use xlink:href="#pin-inner-circle"></use>
+                        <use xlink:href="#pin-outer-circle"></use>
+                    </svg>
+                    <h2>Nearby Cities
+                        <span>in Chicago</span>
+                    </h2>
+                    <div class="col-12 row 0 sec_1 ">
+                        <div class="  col-6">
+                            <ul class=" col-xs-2">
+                                <li class=" address3  p-2 mt-2 " style=" list-style-type: none;">
+                                    <a href="#">OakPark</a>
+                                </li>
+                            </ul>
+                            <ul class=" col col-xs-2">
+                                <li class=" address3 p-2 mt-2" style=" list-style-type: none;">
+                                    <a href="#">Berwyn</a>
+                                </li>
+                            </ul>
+                            <ul class=" col col-xs-2">
+                                <li class="address3 p-2 mt-2" style=" list-style-type: none;">
+                                    <a href="#">Cicero</a>
+                                </li>
+                            </ul>
                         </div>
-                    </section>
-                </section>
-            </div>                
-        </main>
-        <footer class=" k_footer">    
-            <div class="k_bg2">
-                <div class="container">
-                    <div class="row col-12 k_footerbottom p-5">
-                        <section class=" k_inlineblock k_box1 col-sm-3">
-                            <h6><strong>About</strong></h6>
-                            <a href="" class="k_a">About Us</a><br>
-                            <a href="" class="k_a">Side Feedback</a><br>
-                            <a href="" class="k_a">Contact Us</a><br>
-                            <a href="" class="k_a">Advertise with us</a><br>
-                            <a href="" class="k_a">Corporate Blog</a><br>
-                            <a href="" class="k_a">Legal |</a><a href="" class="k_a">Terms of Use</a><br>
-                            <a href="" class="k_a" >Advertising Choices</a><br>
-                            <a href="" class="k_a">Become a Network Partner</a>
-                        </section>
-                        <section class="col-3 k_inlineblock k_box1 col-sm-3">
-                            <h6><strong>Side Directory</strong></h6>
-                            <a href="" class="k_a">Articles</a><br>
-                            <a href="" class="k_a">Find a Business</a><br>
-                            <a href="" class="k_a">White Pages</a><br>
-                            <a href="" class="k_a">YP Mobile App</a><br>
-                            <a href="" class="k_a">Gas Guru Mobile App</a><br>
-                            <a href="" class="k_a">Revers Phone Lookup</a><br>
-                            <a href="" class="k_a">Site Map</a><br>
-                            <a href="" class="k_a">Browse Restaurants</a><br>
-                        </section>
-                        <section class="col-3 k_inlineblock k_box3 col-sm-3">
-                            <h6 class="k_inlineblock"><strong>City Guides</strong></h6><span class="k_text">(More Cites)</span><br>
-                            <div class="k_inlineblock k_mleft">
-                                <a href="" class="k_a">Atlanta</a><br>
-                                <a href="" class="k_a">Austin</a><br>
-                                <a href="" class="k_a">Baltimore</a><br>
-                                <a href="" class="k_a">Boston</a><br>
-                                <a href="" class="k_a">Charlotte</a><br>
-                                <a href="" class="k_a">Chicago</a><br>
-                                <a href="" class="k_a">Dallas</a><br>
-                                <a href="" class="k_a">Denver</a>
-                            </div>
-                            <div class="k_inlineblock k_mleft">
-                                <a href="" class="k_a">Detroit</a><br>
-                                <a href="" class="k_a">Houston</a><br>
-                                <a href="" class="k_a">Indianapolis</a><br>
-                                <a href="" class="k_a">Kansas City</a><br>
-                                <a href="" class="k_a">Las Vegas</a><br>
-                                <a href="" class="k_a">Los Angeles</a><br>
-                                <a href="" class="k_a">Louisville</a><br>
-                                <a href="" class="k_a">Memphis</a><br>
-                            </div>
-                            <div class="k_inlineblock">
-                                <a href="" class="k_a">Miami</a><br>
-                                <a href="" class="k_a">Milwaukee</a><br>
-                                <a href="" class="k_a">New York</a><br>
-                                <a href="" class="k_a">Oklahoma City</a><br>
-                                <a href="" class="k_a">Orlando</a><br>
-                                <a href="" class="k_a">Philadelphia</a><br>
-                                <a href="" class="k_a">Phoenix</a><br>
-                                <a href="" class="k_a">Saint Louis</a>
-                            </div>
-                        </section>
-                        <section class="col-3 k_inlineblock k_box col-sm-3">
-                            <h6><strong>YP Family</strong></h6>
-                            <a href="" class="k_a">Corporate Site</a><br>
-                            <a href="" class="k_a">Marketing Solutions</a><br>
-                            <a href="" class="k_a">AnyWho</a>
-                        </section>
-                        <div class="text-center k_contact mt-4">
-                            <h4 class="k_contact fs-5"><strong>Contact With Us</strong></h4>
-                            <img src="img/social-media-sprite.svg" class="pt-2">
+                        <div class=" col col-6">
+                            <ul class=" col col-xs-2">
+                                <li class="address3 p-2 mt-2" style=" list-style-type: none;">
+                                    <a href="#">Riverside</a>
+                                </li>
+                            </ul>
+                            <ul class=" col col-xs-2">
+                                <li class="address3 p-2 mt-2" style=" list-style-type: none;">
+                                    <a href="#">ForestPark</a>
+                                </li>
+                            </ul>
+                            <ul class="col col-xs-2">
+                                <li class="address3 p-2 mt-2" style=" list-style-type: none;">
+                                    <a href="#">RiverForest</a>
+                                </li>
+                            </ul>
                         </div>
-                        <div class="text-center pt-5">
-                            <a href="" class="k_privacy">Privary Policy</a>|<a href="" class="k_privacy">Do Not Sell My Personal Information</a>
-                        </div>
-                        <div class="text-center k_bottom mt-5">
-                            <p>© 2022 Thryv, Inc. All rights reserved.</p>
-                            <p>YP, the YP logo and all other YP marks contained herein are trademarks of YP LLC and/or YP affiliated companies.</p>
-                            <p>All other marks contained herein are the property of their respective owners.</p>
+
+                        <div class="button button-3 d-flex justify-content-center">
+                            <a href="#">Explore other cities</a>
                         </div>
                     </div>
-                    
+                </section>
+            </section>
+            <section class="container">
+                <div class="bg-layer mt-2">
+                    <h2 class="sub-heading d-flex justify-content-center ">Popular Categories</h2>
+                    <br>
                 </div>
+            </section>
+            <section class="top" id="categories">
+                <div class="row col-12 ">
+                    <div class="category col col-xs-4">
+                        <h2>
+                            <img class="icon"
+                                src="//i3.ypcdn.com/ypu/images/svgs/categories/popular-restaurants.svg?76bad71"
+                                alt="Popular Restaurants">Popular Restaurants
+                        </h2>
+                        <ul class="listings">
+                            <li style=" list-style-type: none;">
+                                <a class="listing-name" href="#">Italian Fiesta Pizzeria</a>
+                                <div class="address">
+                                    <span>8058 S Halsted St</span>
+                                    <span>Chicago, IL 60620</span>
+                                </div>
+                            </li>
+                            <li style=" list-style-type: none;">
+                                <a class="listing-name" href="#">Italian Fiesta Pizzeria</a>
+                                <div class="address">
+                                    <span>1306 E 47th St</span>
+                                    <span>Chicago, IL 60653</span>
+                                </div>
+                            </li>
+                            <li style=" list-style-type: none;">
+                                <a class="listing-name" href="#">Ferrara Original Inc.</a>
+                                <div class="address">
+                                    <span>2210 W Taylor St</span>
+                                    <span>Chicago, IL 60612</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="category col col-sm-4">
+                        <h2>
+                            <img class="icon"
+                                src="//i3.ypcdn.com/ypu/images/svgs/categories/popular-restaurants.svg?76bad71"
+                                alt="Popular Restaurants">Popular Restaurants
+                        </h2>
+                        <ul class="listings">
+                            <li style=" list-style-type: none;">
+                                <a class="listing-name" href="#">Italian Fiesta Pizzeria</a>
+                                <div class="address">
+                                    <span>8058 S Halsted St</span>
+                                    <span>Chicago, IL 60620</span>
+                                </div>
+                            </li>
+                            <li style=" list-style-type: none;">
+                                <a class="listing-name" href="#">Italian Fiesta Pizzeria</a>
+                                <div class="address">
+                                    <span>1306 E 47th St</span>
+                                    <span>Chicago, IL 60653</span>
+                                </div>
+                            </li>
+                            <li style=" list-style-type: none;">
+                                <a class="listing-name" href="#">Ferrara Original Inc.</a>
+                                <div class="address">
+                                    <span>2210 W Taylor St</span>
+                                    <span>Chicago, IL 60612</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="category col col-sm-4">
+                        <h2>
+                            <img class="icon"
+                                src="//i3.ypcdn.com/ypu/images/svgs/categories/popular-restaurants.svg?76bad71"
+                                alt="Popular Restaurants">Popular Restaurants
+                        </h2>
+                        <ul class="listings">
+                            <li style=" list-style-type: none;">
+                                <a class="listing-name" href="#">Italian Fiesta Pizzeria</a>
+                                <div class="address">
+                                    <span>8058 S Halsted St</span>
+                                    <span>Chicago, IL 60620</span>
+                                </div>
+                            </li>
+                            <li style=" list-style-type: none;">
+                                <a class="listing-name" href="#">Italian Fiesta Pizzeria</a>
+                                <div class="address">
+                                    <span>1306 E 47th St</span>
+                                    <span>Chicago, IL 60653</span>
+                                </div>
+                            </li>
+                            <li style=" list-style-type: none;">
+                                <a class="listing-name" href="#">Ferrara Original Inc.</a>
+                                <div class="address">
+                                    <span>2210 W Taylor St</span>
+                                    <span>Chicago, IL 60612</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="category col col-xs-4">
+                        <h2>
+                            <img class="icon"
+                                src="//i3.ypcdn.com/ypu/images/svgs/categories/popular-restaurants.svg?76bad71"
+                                alt="Popular Restaurants">Popular Restaurants
+                        </h2>
+                        <ul class="listings">
+                            <li style=" list-style-type: none;">
+                                <a class="listing-name" href="#">Italian Fiesta Pizzeria</a>
+                                <div class="address">
+                                    <span>8058 S Halsted St</span>
+                                    <span>Chicago, IL 60620</span>
+                                </div>
+                            </li>
+                            <li style=" list-style-type: none;">
+                                <a class="listing-name" href="#">Italian Fiesta Pizzeria</a>
+                                <div class="address">
+                                    <span>1306 E 47th St</span>
+                                    <span>Chicago, IL 60653</span>
+                                </div>
+                            </li>
+                            <li style=" list-style-type: none;">
+                                <a class="listing-name" href="#">Ferrara Original Inc.</a>
+                                <div class="address">
+                                    <span>2210 W Taylor St</span>
+                                    <span>Chicago, IL 60612</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="category col col-sm-4">
+                        <h2>
+                            <img class="icon"
+                                src="//i3.ypcdn.com/ypu/images/svgs/categories/popular-restaurants.svg?76bad71"
+                                alt="Popular Restaurants">Popular Restaurants
+                        </h2>
+                        <ul class="listings">
+                            <li style=" list-style-type: none;">
+                                <a class="listing-name" href="#">Italian Fiesta Pizzeria</a>
+                                <div class="address">
+                                    <span>8058 S Halsted St</span>
+                                    <span>Chicago, IL 60620</span>
+                                </div>
+                            </li>
+                            <li style=" list-style-type: none;">
+                                <a class="listing-name" href="#">Italian Fiesta Pizzeria</a>
+                                <div class="address">
+                                    <span>1306 E 47th St</span>
+                                    <span>Chicago, IL 60653</span>
+                                </div>
+                            </li>
+                            <li style=" list-style-type: none;">
+                                <a class="listing-name" href="#">Ferrara Original Inc.</a>
+                                <div class="address">
+                                    <span>2210 W Taylor St</span>
+                                    <span>Chicago, IL 60612</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="category col col-sm-4">
+                        <h2>
+                            <img class="icon"
+                                src="//i3.ypcdn.com/ypu/images/svgs/categories/popular-restaurants.svg?76bad71"
+                                alt="Popular Restaurants">
+                            Popular Restaurants
+                        </h2>
+                        <ul class="listings">
+                            <li style="">
+                                <a class="listing-name" href="#">Italian Fiesta Pizzeria</a>
+                                <div class="address">
+                                    <span>8058 S Halsted St</span>
+                                    <span>Chicago, IL 60620</span>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="listing-name" href="#">Italian Fiesta Pizzeria</a>
+                                <div class="address">
+                                    <span>1306 E 47th St</span>
+                                    <span>Chicago, IL 60653</span>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="listing-name" href="#">Ferrara Original Inc.</a>
+                                <div class="address">
+                                    <span>2210 W Taylor St</span>
+                                    <span>Chicago, IL 60612</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="container section-box coupons citypages " id="coupons">
+                <div class="bg-layer mt-2 ">
+                    <h2 class="sub-heading d-flex justify-content-center ">Coupons & Deals</h2>
+                    <br>
+                </div>
+                <div class="row col-12">
+                    <div class="col-sm-3">
+                        <ul>
+                            <li class="coupon-modal-source">
+                                <div class="coupon">
+                                    <a class="coupon-link">
+                                        <img class="coupon-img"
+                                            src="/img/bcb4bfc09981fe7bafdc811650cdfed88c9e8355_227x150_crop.jpg"
+                                            width="227" height="150">
+                                        <div class="coupon-title">
+                                            <p>12% Off Takeout Premium Sushi fo…</p>
+                                        </div>
+                                        <div class="coupon-listing-name">Arami</div>
+                                        <div class="coupon-citystate">Chicago, IL</div>
+                                        <div class="coupon-value">
+                                            <span class="actual-price">$99</span>
+                                            <span class="original-price">$113</span>
+                                        </div>
+                                    </a>
+                                    <div class="favorites-actions">
+                                        <a class="add-to-favorites add" href="#">
+                                            <svg viewBox="0 0 10 16" width="10" height="16">
+                                            </svg>
+                                            Save
+                                        </a>
+                                        <a class="add-to-favorites remove" href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 16" width="10"
+                                                height="16">
+                                            </svg>
+                                            Remove
+                                        </a>
+                                        <div class="added-message success">
+                                            <p>
+                                                <strong>This coupon was added to Favorites</strong>
+                                            </p>
+                                        </div>
+                                        <div class="added-message fail">
+                                            <p>
+                                                <strong>Error when adding a coupon to Favorites</strong>
+                                            </p>
+                                        </div>
+                                        <div class="added-message removed">
+                                            <p>
+                                                <strong>This coupon was removed from Favorites</strong>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="col-sm-3">
+                        <ul>
+                            <li class="coupon-modal-source">
+                                <div class="coupon">
+                                    <a class="coupon-link">
+                                        <img class="coupon-img"
+                                            src="/img/2004832341a45fef8cdd39e46a1ed56a455bcbff_227x150_crop.jpg"
+                                            width="227" height="150">
+                                        <div class="coupon-title">
+                                            <p>12% Off Takeout Premium Sushi fo…</p>
+                                        </div>
+                                        <div class="coupon-listing-name">Arami</div>
+                                        <div class="coupon-citystate">Chicago, IL</div>
+                                        <div class="coupon-value">
+                                            <span class="actual-price">$99</span>
+                                            <span class="original-price">$113</span>
+                                        </div>
+                                    </a>
+                                    <div class="favorites-actions">
+                                        <a class="add-to-favorites add" href="#">
+                                            <svg viewBox="0 0 10 16" width="10" height="16">
+                                                <polygon points="0.5 0.5, 9.5 0.5, 9.5 15 , 5 11.5, 0.5 15"></polygon>
+                                            </svg>
+                                            Save
+                                        </a>
+                                        <a class="add-to-favorites remove" href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 16" width="10"
+                                                height="16">
+
+                                                <polygon points="0.5 0.5, 9.5 0.5, 9.5 15 , 5 11.5, 0.5 15"></polygon>
+                                            </svg>
+                                            Remove
+                                        </a>
+                                        <div class="added-message success">
+                                            <p>
+                                                <strong>This coupon was added to Favorites</strong>
+                                            </p>
+                                        </div>
+                                        <div class="added-message fail">
+                                            <p>
+                                                <strong>Error when adding a coupon to Favorites</strong>
+                                            </p>
+                                        </div>
+                                        <div class="added-message removed">
+                                            <p>
+                                                <strong>This coupon was removed from Favorites</strong>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="col-sm-3">
+                        <ul>
+                            <li class="coupon-modal-source">
+                                <div class="coupon">
+                                    <a class="coupon-link">
+                                        <img class="coupon-img" src="/img/food_4.jpg" width="227" height="150">
+                                        <div class="coupon-title">
+                                            <p>12% Off Takeout Premium Sushi fo…</p>
+                                        </div>
+                                        <div class="coupon-listing-name">Arami</div>
+                                        <div class="coupon-citystate">Chicago, IL</div>
+                                        <div class="coupon-value">
+                                            <span class="actual-price">$99</span>
+                                            <span class="original-price">$113</span>
+                                        </div>
+                                    </a>
+                                    <div class="favorites-actions">
+                                        <a class="add-to-favorites add" href="#">
+                                            <svg viewBox="0 0 10 16" width="10" height="16">
+                                                <polygon points="0.5 0.5, 9.5 0.5, 9.5 15 , 5 11.5, 0.5 15"></polygon>
+                                            </svg>
+                                            Save
+                                        </a>
+                                        <a class="add-to-favorites remove" href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 16" width="10"
+                                                height="16">
+
+                                                <polygon points="0.5 0.5, 9.5 0.5, 9.5 15 , 5 11.5, 0.5 15"></polygon>
+                                            </svg>
+                                            Remove
+                                        </a>
+                                        <div class="added-message success">
+                                            <p>
+                                                <strong>This coupon was added to Favorites</strong>
+                                            </p>
+                                        </div>
+                                        <div class="added-message fail">
+                                            <p>
+                                                <strong>Error when adding a coupon to Favorites</strong>
+                                            </p>
+                                        </div>
+                                        <div class="added-message removed">
+                                            <p>
+                                                <strong>This coupon was removed from Favorites</strong>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="col-sm-3">
+                        <ul>
+                            <li class="coupon-modal-source">
+                                <div class="coupon">
+                                    <a class="coupon-link">
+                                        <img class="coupon-img" src="/img/coupn_citry.jpg" width="227" height="150">
+                                        <div class="coupon-title">
+                                            <p>12% Off Takeout Premium Sushi fo…</p>
+                                        </div>
+                                        <div class="coupon-listing-name">Arami</div>
+                                        <div class="coupon-citystate">Chicago, IL</div>
+                                        <div class="coupon-value">
+                                            <span class="actual-price">$99</span>
+                                            <span class="original-price">$113</span>
+                                        </div>
+                                    </a>
+                                    <div class="favorites-actions">
+                                        <a class="add-to-favorites add" href="#">
+                                            <svg viewBox="0 0 10 16" width="10" height="16">
+                                                <polygon points="0.5 0.5, 9.5 0.5, 9.5 15 , 5 11.5, 0.5 15"></polygon>
+                                            </svg>
+                                            Save
+                                        </a>
+                                        <a class="add-to-favorites remove" href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 16" width="10"
+                                                height="16">
+
+                                                <polygon points="0.5 0.5, 9.5 0.5, 9.5 15 , 5 11.5, 0.5 15"></polygon>
+                                            </svg>
+                                            Remove
+                                        </a>
+                                        <div class="added-message success">
+                                            <p>
+                                                <strong>This coupon was added to Favorites</strong>
+                                            </p>
+                                        </div>
+                                        <div class="added-message fail">
+                                            <p>
+                                                <strong>Error when adding a coupon to Favorites</strong>
+                                            </p>
+                                        </div>
+                                        <div class="added-message removed">
+                                            <p>
+                                                <strong>This coupon was removed from Favorites</strong>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="col-sm-3">
+                        <ul>
+                            <li class="coupon-modal-source">
+                                <div class="coupon">
+                                    <a class="coupon-link">
+                                        <img class="coupon-img" src="/img/food_5.jpg" width="227" height="150">
+                                        <div class="coupon-title">
+                                            <p>12% Off Takeout Premium Sushi fo…</p>
+                                        </div>
+                                        <div class="coupon-listing-name">Arami</div>
+                                        <div class="coupon-citystate">Chicago, IL</div>
+                                        <div class="coupon-value">
+                                            <span class="actual-price">$99</span>
+                                            <span class="original-price">$113</span>
+                                        </div>
+                                    </a>
+                                    <div class="favorites-actions">
+                                        <a class="add-to-favorites add" href="#">
+                                            <svg viewBox="0 0 10 16" width="10" height="16">
+                                                <polygon points="0.5 0.5, 9.5 0.5, 9.5 15 , 5 11.5, 0.5 15"></polygon>
+                                            </svg>
+                                            Save
+                                        </a>
+                                        <a class="add-to-favorites remove" href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 16" width="10"
+                                                height="16">
+
+                                                <polygon points="0.5 0.5, 9.5 0.5, 9.5 15 , 5 11.5, 0.5 15"></polygon>
+                                            </svg>
+                                            Remove
+                                        </a>
+                                        <div class="added-message success">
+                                            <p>
+                                                <strong>This coupon was added to Favorites</strong>
+                                            </p>
+                                        </div>
+                                        <div class="added-message fail">
+                                            <p>
+                                                <strong>Error when adding a coupon to Favorites</strong>
+                                            </p>
+                                        </div>
+                                        <div class="added-message removed">
+                                            <p>
+                                                <strong>This coupon was removed from Favorites</strong>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="col-sm-3">
+                        <ul>
+                            <li class="coupon-modal-source">
+                                <div class="coupon">
+                                    <a class="coupon-link">
+                                        <img class="coupon-img" src="/img/kitchn.jpg" width="227" height="150">
+                                        <div class="coupon-title">
+                                            <p>12% Off Takeout Premium Sushi fo…</p>
+                                        </div>
+                                        <div class="coupon-listing-name">Arami</div>
+                                        <div class="coupon-citystate">Chicago, IL</div>
+                                        <div class="coupon-value">
+                                            <span class="actual-price">$99</span>
+                                            <span class="original-price">$113</span>
+                                        </div>
+                                    </a>
+                                    <div class="favorites-actions">
+                                        <a class="add-to-favorites add" href="#">
+                                            <svg viewBox="0 0 10 16" width="10" height="16">
+                                                <polygon points="0.5 0.5, 9.5 0.5, 9.5 15 , 5 11.5, 0.5 15"></polygon>
+                                            </svg>
+                                            Save
+                                        </a>
+                                        <a class="add-to-favorites remove" href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 16" width="10"
+                                                height="16">
+
+                                                <polygon points="0.5 0.5, 9.5 0.5, 9.5 15 , 5 11.5, 0.5 15"></polygon>
+                                            </svg>
+                                            Remove
+                                        </a>
+                                        <div class="added-message success">
+                                            <p>
+                                                <strong>This coupon was added to Favorites</strong>
+                                            </p>
+                                        </div>
+                                        <div class="added-message fail">
+                                            <p>
+                                                <strong>Error when adding a coupon to Favorites</strong>
+                                            </p>
+                                        </div>
+                                        <div class="added-message removed">
+                                            <p>
+                                                <strong>This coupon was removed from Favorites</strong>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="col-sm-3">
+                        <ul>
+                            <li class="coupon-modal-source">
+                                <div class="coupon">
+                                    <a class="coupon-link">
+                                        <img class="coupon-img" src="/img/maggi.jpg" width="227" height="150">
+                                        <div class="coupon-title">
+                                            <p>12% Off Takeout Premium Sushi fo…</p>
+                                        </div>
+                                        <div class="coupon-listing-name">Arami</div>
+                                        <div class="coupon-citystate">Chicago, IL</div>
+                                        <div class="coupon-value">
+                                            <span class="actual-price">$99</span>
+                                            <span class="original-price">$113</span>
+                                        </div>
+                                    </a>
+                                    <div class="favorites-actions">
+                                        <a class="add-to-favorites add" href="#">
+                                            <svg viewBox="0 0 10 16" width="10" height="16">
+                                                <polygon points="0.5 0.5, 9.5 0.5, 9.5 15 , 5 11.5, 0.5 15"></polygon>
+                                            </svg>
+                                            Save
+                                        </a>
+                                        <a class="add-to-favorites remove" href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 16" width="10"
+                                                height="16">
+
+                                                <polygon points="0.5 0.5, 9.5 0.5, 9.5 15 , 5 11.5, 0.5 15"></polygon>
+                                            </svg>
+                                            Remove
+                                        </a>
+                                        <div class="added-message success">
+                                            <p>
+                                                <strong>This coupon was added to Favorites</strong>
+                                            </p>
+                                        </div>
+                                        <div class="added-message fail">
+                                            <p>
+                                                <strong>Error when adding a coupon to Favorites</strong>
+                                            </p>
+                                        </div>
+                                        <div class="added-message removed">
+                                            <p>
+                                                <strong>This coupon was removed from Favorites</strong>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="col-sm-3">
+                        <ul>
+                            <li class="coupon-modal-source">
+                                <div class="coupon">
+                                    <a class="coupon-link">
+                                        <img class="coupon-img" src="/img/food_6.jpg" width="227" height="150">
+                                        <div class="coupon-title">
+                                            <p>12% Off Takeout Premium Sushi fo…</p>
+                                        </div>
+                                        <div class="coupon-listing-name">Arami</div>
+                                        <div class="coupon-citystate">Chicago, IL</div>
+                                        <div class="coupon-value">
+                                            <span class="actual-price">$99</span>
+                                            <span class="original-price">$113</span>
+                                        </div>
+                                    </a>
+                                    <div class="favorites-actions">
+                                        <a class="add-to-favorites add" href="#">
+                                            <svg viewBox="0 0 10 16" width="10" height="16">
+                                                <polygon points="0.5 0.5, 9.5 0.5, 9.5 15 , 5 11.5, 0.5 15"></polygon>
+                                            </svg>
+                                            Save
+                                        </a>
+                                        <a class="add-to-favorites remove" href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 16" width="10"
+                                                height="16">
+
+                                                <polygon points="0.5 0.5, 9.5 0.5, 9.5 15 , 5 11.5, 0.5 15"></polygon>
+                                            </svg>
+                                            Remove
+                                        </a>
+                                        <div class="added-message success">
+                                            <p>
+                                                <strong>This coupon was added to Favorites</strong>
+                                            </p>
+                                        </div>
+                                        <div class="added-message fail">
+                                            <p>
+                                                <strong>Error when adding a coupon to Favorites</strong>
+                                            </p>
+                                        </div>
+                                        <div class="added-message removed">
+                                            <p>
+                                                <strong>This coupon was removed from Favorites</strong>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </section>
+            <section class="popular-cats">
+                <h2 style="margin:auto;">Popular Categories</h2>
+                <div class="row col-12">
+                    <div class="col-sm-3">
+                        <article>
+                            <h3 class="expand-icon">HOME SERVICES</h3>
+                            <div class="row expand-area">
+                                <a href="#" class="main_a_a">Storage Units</a>
+                                <a href="#" class="main_a_a">Plumbers</a>
+                                <a href="#" class="main_a_a">Electricians</a>
+                                <a href="#" class="main_a_a">Carpet Cleaning</a>
+                                <a href="#" class="main_a_a">Moving Companies</a>
+                                <a href="#" class="main_a_a">Pest Control Services</a>
+                                <a href="#" class="main_a_a">Self Storage</a>
+                                <a href="#" class="main_a_a">Appliance Repair</a>
+                                <a href="-#">Garage Door Repair</a>
+                                <a href="#" class="main_a_a">Appliance Parts</a>
+                                <a href="#" class="main_a_a">Cleaning Services</a>
+                                <a href="#" class="main_a_a">Lawn Mower Repair</a>
+                                <a href="#" class="main_a_a">Moving Truck Rental</a>
+                                <a href="#" class="main_a_a">AC Repair</a>
+                                <a href="#" class="main_a_a">Home Security System Installation</a>
+                                <a href="#" class="main_a_a">Garden Centers</a>
+                                <a href="#" class="main_a_a">Refrigerator Repair</a>
+                                <a href="#" class="main_a_a">Plant Nurseries</a>
+                                <a href="#" class="main_a_a">Tree Service</a>
+                                <a href="#" class="main_a_a">General Contractors</a>
+                            </div>
+                        </article>
+
+                    </div>
+                    <div class="col-sm-3">
+                        <article>
+                            <h3 class="expand-icon">MEDICAL SERVICES</h3>
+                            <div class="row expand-area">
+                                <a href="#" class="main_a_a">Dentists</a>
+                                <a href="#" class="main_a_a">Dermatologists</a>
+                                <a href="#" class="main_a_a">Optometrists</a>
+                                <a href="#" class="main_a_a">Physical Therapy </a>
+                                <a href="#" class="main_a_a">Hospitals</a>
+                                <a href="#" class="main_a_a">Endocrinologists</a>
+                                <a href="#" class="main_a_a">Gynecologists</a>
+                                <a href="#" class="main_a_a">Podiatrists</a>
+                                <a href="-#" class="main_a_a">Neurologistsr</a>
+                                <a href="#" class="main_a_a">Ophthalmologists</a>
+                                <a href="#" class="main_a_a">Gastroenterologists</a>
+                                <a href="#" class="main_a_a">Pediatricians</a>
+                                <a href="#" class="main_a_a">Orthodontists</a>
+                                <a href="#" class="main_a_a">Urologists</a>
+                                <a href="#" class="main_a_a">Rheumatologists</a>
+                                <a href="#" class="main_a_a">Obgyn</a>
+                                <a href="#" class="main_a_a">Physicians</a>
+                                <a href="#" class="main_a_a">Cardiologists</a>
+                                <a href="#" class="main_a_a">Radiology</a>
+                                <a href="#" class="main_a_a">Pediatric Dentists</a>
+                            </div>
+                        </article>
+
+                    </div>
+                    <div class="col-sm-3">
+                        <article>
+                            <h3 class="expand-icon">AUTO SERVICES</h3>
+                            <div class="row expand-area">
+                                <a href="#" class="main_a_a">Auto Parts</a>
+                                <a href="#" class="main_a_a">Oil Change</a>
+                                <a href="#" class="main_a_a">Tire Shops</a>
+                                <a href="#" class="main_a_a">Auto Repair</a>
+                                <a href="#" class="main_a_a">Window Tinting</a>
+                                <a href="#" class="main_a_a">Towing</a>
+                                <a href="#" class="main_a_a">Auto Body Shops</a>
+                                <a href="#" class="main_a_a">Car Detailing</a>
+                                <a href="-#">Roadside Assistance</a>
+                                <a href="#" class="main_a_a">Auto Glass Repair</a>
+                                <a href="#" class="main_a_a">Tire Repair</a>
+                                <a href="#" class="main_a_a">Auto Salvage</a>
+                                <a href="#" class="main_a_a">Auto Glass</a>
+                                <a href="#" class="main_a_a">Car Accessories</a>
+                                <a href="#" class="main_a_a">Wheel Alignment</a>
+                                <a href="#" class="main_a_a">Used Car Parts</a>
+                                <a href="#" class="main_a_a">Car Transport</a>
+                                <a href="#" class="main_a_a">Paintless Dent Repair</a>
+                                <a href="#" class="main_a_a">Radiator Repair</a>
+                                <a href="#" class="main_a_a">Car Alarm Installation</a>
+                            </div>
+                        </article>
+
+                    </div>
+                    <div class="col-sm-3">
+                        <article>
+                            <h3 class="expand-icon">LEGAL SERVICES</h3>
+                            <div class="row expand-area">
+                                <a href="#" class="main_a_a">Bail Bonds</a>
+                                <a href="#" class="main_a_a">Private Investigators</a>
+                                <a href="#" class="main_a_a">Stenographers</a>
+                                <a href="#" class="main_a_a">Divorce Attorneys</a>
+                                <a href="#" class="main_a_a">Lie Detector Tests</a>
+                                <a href="#" class="main_a_a">Car Accident Lawyers</a>
+                                <a href="#" class="main_a_a">Family Law Attorneys</a>
+                                <a href="#" class="main_a_a">Bankruptcy Attorneys</a>
+                                <a href="#" class="main_a_a">Process Servers</a>
+                                <a href="#" class="main_a_a">Tax Attorneys</a>
+                                <a href="#" class="main_a_a">Fingerprinting Services</a>
+                                <a href="#" class="main_a_a">Medical Malpractice Lawyers</a>
+                                <a href="#" class="main_a_a">Accident Attorneys</a>
+                                <a href="#" class="main_a_a">Child Custody Lawyers</a>
+                                <a href="#" class="main_a_a">Business Lawyers</a>
+                                <a href="#" class="main_a_a">Immigration Lawyers</a>
+                                <a href="#" class="main_a_a">Workers Compensation Attorneys</a>
+                                <a href="#" class="main_a_a">DUI Attorneys</a>
+                                <a href="#" class="main_a_a">Civil Rights Attorneys</a>
+                                <a href="#" class="main_a_a">Labor Law Attorneys</a>
+                            </div>
+                        </article>
+
+                    </div>
+                    <div class="col-sm-3">
+                        <article>
+                            <h3 class="expand-icon">RESTAURANTS</h3>
+                            <div class="row expand-area">
+                                <a href="#" class="main_a_a">Mexican Restaurants</a>
+                                <a href="#" class="main_a_a">Sushi Bars</a>
+                                <a href="#" class="main_a_a">Chinese Restaurants</a>
+                                <a href="#" class="main_a_a">Italian Restaurants</a>
+                                <a href="#" class="main_a_a">Thai Restaurants</a>
+                                <a href="#" class="main_a_a">Breakfast Restaurants</a>
+                                <a href="#" class="main_a_a">Seafood Restaurants</a>
+                                <a href="#" class="main_a_a">Vegetarian Restaurants</a>
+                                <a href="#" class="main_a_a">Korean Restaurants</a>
+                                <a href="#" class="main_a_a">Cuban Restaurants</a>
+                                <a href="#" class="main_a_a">Greek Restaurantss</a>
+                                <a href="#" class="main_a_a">Soul Food Restaurants</a>
+                                <a href="#" class="main_a_a">Japanese Restaurants</a>
+                                <a href="#" class="main_a_a">French Restaurants</a>
+                                <a href="#" class="main_a_a">German Restaurants</a>
+                                <a href="#" class="main_a_a">Brazilian Restaurants</a>
+                            </div>
+                        </article>
+
+                    </div>
+                    <div class="col-sm-3">
+                        <article>
+                            <h3 class="expand-icon">INSURANCE</h3>
+                            <div class="row expand-area">
+                                <a href="#" class="main_a_a">Car Insurance</a>
+                                <a href="#" class="main_a_a">Boat Insurance</a>
+                                <a href="#" class="main_a_a">Business Insurance</a>
+                                <a href="#" class="main_a_a">Dental Insurance</a>
+                                <a href="#" class="main_a_a">Disability Insurance</a>
+                                <a href="#" class="main_a_a">Flood Insurance</a>
+                                <a href="#" class="main_a_a">Home Insurance</a>
+                                <a href="#" class="main_a_a">Insurance</a>
+                                <a href="#" class="main_a_a">Liability Insurance</a>
+                                <a href="#" class="main_a_a">Life Insurance</a>
+                                <a href="#" class="main_a_a">Long Term Care Insurance</a>
+                                <a href="#" class="main_a_a">Motorcycle Insurance</a>
+                                <a href="#" class="main_a_a">Pet Insurance</a>
+                                <a href="#" class="main_a_a">Renters Insurance</a>
+                                <a href="#" class="main_a_a">RV Insurance</a>
+                                <a href="#" class="main_a_a">Title Insurance</a>
+                                <a href="#" class="main_a_a">Travel Insurance</a>
+                                <a href="#" class="main_a_a">Truck Insurance</a>
+                            </div>
+                        </article>
+
+                    </div>
+                    <div class="col-sm-3">
+                        <article>
+                            <h3 class="expand-icon">PET SERVICES</h3>
+                            <div class="row expand-area">
+                                <a href="#" class="main_a_a">Animal Shelters</a>
+                                <a href="#" class="main_a_a">Dog Training</a>
+                                <a href="#" class="main_a_a">Doggy Day Cares</a>
+                                <a href="#" class="main_a_a">Emergency Vets</a>
+                                <a href="#" class="main_a_a">Kennels</a>
+                                <a href="#" class="main_a_a">Mobile Pet Grooming</a>
+                                <a href="#" class="main_a_a">Pet Boarding</a>
+                                <a href="#" class="main_a_a">Pet Cemeteries</a>
+                                <a href="#" class="main_a_a">Pet Grooming</a>
+                                <a href="#" class="main_a_a">Veterinary Clinics</a>
+                            </div>
+                        </article>
+
+                    </div>
+                    <div class="col-sm-3">
+                        <article>
+                            <h3 class="expand-icon">BEAUTY</h3>
+                            <div class="row expand-area">
+                                <a href="#" class="main_a_a">Massage</a>
+                                <a href="#" class="main_a_a">Barber Shops</a>
+                                <a href="#" class="main_a_a">Nail Salons</a>
+                                <a href="#" class="main_a_a">Beauty Supplies</a>
+                                <a href="#" class="main_a_a">Hair Removal</a>
+                                <a href="#" class="main_a_a">Hair Stylists</a>
+                                <a href="#" class="main_a_a">Facial Salons</a>
+                                <a href="#" class="main_a_a">Beauty Salons</a>
+                                <a href="#" class="main_a_a"> Day Spas</a>
+                                <a href="#" class="main_a_a">Hair Supplies</a>
+                            </div>
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+            <section class="container">
+                <section class="section-box" id="thryv-scan-promo">
+                    <div class="container">
+                        <span class="offer-note">LIMITED TIME OFFER</span>
+                        <h2>What are consumers saying about your business online?</h2>
+                        <p>See how you score locally with this FAST, FREE online scan.
+                            <strong>Get your rating out of 100 now.</strong>
+                        </p>
+                        <a class="btn" rel="noopener" href="#">Begin Scan</a>
+                    </div>
+                </section>
+            </section>
+        </div>
+    </main>
+    <footer class=" k_footer">
+        <div class="k_bg2">
+            <div class="container">
+                <div class="row col-12 k_footerbottom p-5">
+                    <section class=" k_inlineblock k_box1 col-sm-3">
+                        <h6><strong>About</strong></h6>
+                        <a href="" class="k_a">About Us</a><br>
+                        <a href="" class="k_a">Side Feedback</a><br>
+                        <a href="" class="k_a">Contact Us</a><br>
+                        <a href="" class="k_a">Advertise with us</a><br>
+                        <a href="" class="k_a">Corporate Blog</a><br>
+                        <a href="" class="k_a">Legal |</a><a href="" class="k_a">Terms of Use</a><br>
+                        <a href="" class="k_a">Advertising Choices</a><br>
+                        <a href="" class="k_a">Become a Network Partner</a>
+                    </section>
+                    <section class="col-3 k_inlineblock k_box1 col-sm-3">
+                        <h6><strong>Side Directory</strong></h6>
+                        <a href="" class="k_a">Articles</a><br>
+                        <a href="" class="k_a">Find a Business</a><br>
+                        <a href="" class="k_a">White Pages</a><br>
+                        <a href="" class="k_a">YP Mobile App</a><br>
+                        <a href="" class="k_a">Gas Guru Mobile App</a><br>
+                        <a href="" class="k_a">Revers Phone Lookup</a><br>
+                        <a href="" class="k_a">Site Map</a><br>
+                        <a href="" class="k_a">Browse Restaurants</a><br>
+                    </section>
+                    <section class="col-3 k_inlineblock k_box3 col-sm-3">
+                        <h6 class="k_inlineblock"><strong>City Guides</strong></h6><span class="k_text">(More
+                            Cites)</span><br>
+                        <div class="k_inlineblock k_mleft">
+                            <a href="" class="k_a">Atlanta</a><br>
+                            <a href="" class="k_a">Austin</a><br>
+                            <a href="" class="k_a">Baltimore</a><br>
+                            <a href="" class="k_a">Boston</a><br>
+                            <a href="" class="k_a">Charlotte</a><br>
+                            <a href="" class="k_a">Chicago</a><br>
+                            <a href="" class="k_a">Dallas</a><br>
+                            <a href="" class="k_a">Denver</a>
+                        </div>
+                        <div class="k_inlineblock k_mleft">
+                            <a href="" class="k_a">Detroit</a><br>
+                            <a href="" class="k_a">Houston</a><br>
+                            <a href="" class="k_a">Indianapolis</a><br>
+                            <a href="" class="k_a">Kansas City</a><br>
+                            <a href="" class="k_a">Las Vegas</a><br>
+                            <a href="" class="k_a">Los Angeles</a><br>
+                            <a href="" class="k_a">Louisville</a><br>
+                            <a href="" class="k_a">Memphis</a><br>
+                        </div>
+                        <div class="k_inlineblock">
+                            <a href="" class="k_a">Miami</a><br>
+                            <a href="" class="k_a">Milwaukee</a><br>
+                            <a href="" class="k_a">New York</a><br>
+                            <a href="" class="k_a">Oklahoma City</a><br>
+                            <a href="" class="k_a">Orlando</a><br>
+                            <a href="" class="k_a">Philadelphia</a><br>
+                            <a href="" class="k_a">Phoenix</a><br>
+                            <a href="" class="k_a">Saint Louis</a>
+                        </div>
+                    </section>
+                    <section class="col-3 k_inlineblock k_box col-sm-3">
+                        <h6><strong>YP Family</strong></h6>
+                        <a href="" class="k_a">Corporate Site</a><br>
+                        <a href="" class="k_a">Marketing Solutions</a><br>
+                        <a href="" class="k_a">AnyWho</a>
+                    </section>
+                    <div class="text-center k_contact mt-4">
+                        <h4 class="k_contact fs-5"><strong>Contact With Us</strong></h4>
+                        <img src="img/social-media-sprite.svg" class="pt-2">
+                    </div>
+                    <div class="text-center pt-5">
+                        <a href="" class="k_privacy">Privary Policy</a>|<a href="" class="k_privacy">Do Not Sell My
+                            Personal Information</a>
+                    </div>
+                    <div class="text-center k_bottom mt-5">
+                        <p>© 2022 Thryv, Inc. All rights reserved.</p>
+                        <p>YP, the YP logo and all other YP marks contained herein are trademarks of YP LLC and/or YP
+                            affiliated companies.</p>
+                        <p>All other marks contained herein are the property of their respective owners.</p>
+                    </div>
+                </div>
+
             </div>
-        </footer>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    </body>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
 </html>
