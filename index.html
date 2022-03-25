@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/index.css">
     <title>Chicago</title>
     <style>
         body {
@@ -385,6 +384,7 @@
             top: 195px;
             background-color: #fff;
         }
+
         .coupons ul>li .coupon .coupon-link {
             color: #4f9300;
             display: inline-block;
@@ -472,15 +472,17 @@
 
 
         .main_a_a {
-            color: #067ab4   !important;
+            color: #067ab4 !important;
             font-size: 0.9em;
             text-decoration: none;
             font-family: helvetica, arial, sans-serif;
         }
+
         .coupons ul>li .coupon .favorites-actions {
             display: none;
             z-index: 3;
         }
+
         .coupons ul>li .coupon .coupon-img {
             background-color: #f7f6f2;
             min-width: 210px;
@@ -590,8 +592,16 @@
         .tbdr {
             border: 1px dashed #000;
         }
+
+        .imgfulid {
+            max-width: 100%;
+            height: auto;
+            vertical-align: middle;
+
+        }
     </style>
 </head>
+
 <body>
     <header class="container p-0">
         <nav class="navbar navbar-expand-lg navbar-light">
@@ -1063,7 +1073,7 @@
                                             Remove
                                         </a>
                                         <div class="added-message success">
-                                            <p> 
+                                            <p>
                                                 <strong>This coupon was added to Favorites</strong>
                                             </p>
                                         </div>
@@ -1077,11 +1087,11 @@
                                                 <strong>This coupon was removed from Favorites</strong>
                                             </p>
                                         </div>
-                                    </div>              
+                                    </div>
                                 </div>
                             </li>
                         </ul>
-                        
+
 
                     </div>
                     <div class="col-sm-3">
@@ -1453,7 +1463,7 @@
                 </div>
             </section>
             <section class="popular-cats">
-                <h2 style="margin-bottom: 20px; margin-left: 393px;">Popular Categories</h2>
+                <h2 style="margin-bottom: 30px; margin-left: 394px;">Popular Categories</h2>
                 <div class="row col-12">
                     <div class="col-sm-3">
                         <article>
@@ -1467,7 +1477,7 @@
                                 <a href="#" class="main_a_a">Pest Control Services</a>
                                 <a href="#" class="main_a_a">Self Storage</a>
                                 <a href="#" class="main_a_a">Appliance Repair</a>
-                                <a href="#"class="main_a_a">Garage Door Repair</a>
+                                <a href="#" class="main_a_a">Garage Door Repair</a>
                                 <a href="#" class="main_a_a">Appliance Parts</a>
                                 <a href="#" class="main_a_a">Cleaning Services</a>
                                 <a href="#" class="main_a_a">Lawn Mower Repair</a>
@@ -1523,7 +1533,7 @@
                                 <a href="#" class="main_a_a">Towing</a>
                                 <a href="#" class="main_a_a">Auto Body Shops</a>
                                 <a href="#" class="main_a_a">Car Detailing</a>
-                                <a href="#"class="main_a_a">Roadside Assistance</a>
+                                <a href="#" class="main_a_a">Roadside Assistance</a>
                                 <a href="#" class="main_a_a">Auto Glass Repair</a>
                                 <a href="#" class="main_a_a">Tire Repair</a>
                                 <a href="#" class="main_a_a">Auto Salvage</a>
@@ -1658,14 +1668,17 @@
 
             </section>
             <section class="container">
-                <section class="section-box" id="thryv-scan-promo">
-                    <div class="container">
+                <section class="section-box row col-12" id="thryv-scan-promo">
+                    <div class="container col-sm-6">
                         <span class="offer-note">LIMITED TIME OFFER</span>
                         <h2>What are consumers saying about your business online?</h2>
                         <p>See how you score locally with this FAST, FREE online scan.
                             <strong>Get your rating out of 100 now.</strong>
                         </p>
                         <a class="btn" rel="noopener" href="#">Begin Scan</a>
+                    </div>
+                    <div class="imgfulid col-sm-6">
+                        <img src="/img/scan.png" alt="image not available">
                     </div>
                 </section>
             </section>
@@ -1760,4 +1773,5 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 </body>
+
 </html>
